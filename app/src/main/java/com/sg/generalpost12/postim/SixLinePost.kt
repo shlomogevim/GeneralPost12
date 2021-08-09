@@ -7,12 +7,12 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 
-class FiveLines (val contex: Context, val layout: ConstraintLayout) {
+class SixLinePost  (val contex: Context, val layout: ConstraintLayout) {
 
 
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
-    fun createPost5(
+    fun createPost6(
         index:Int,
         strings:Array<String>,
         array: Array<Array<Int>>,
@@ -51,6 +51,16 @@ class FiveLines (val contex: Context, val layout: ConstraintLayout) {
         }
         textView5.id = View.generateViewId()
 
+        val textView6 = TextView(contex)
+        textView6.text = strings[5]
+        textView6.background
+        if (index==1){
+            textView6.textSize = 24f
+        }else {
+            textView6.textSize = textSize
+        }
+        textView6.id = View.generateViewId()
+
 
         val lp1 = ConstraintLayout.LayoutParams(
             ConstraintLayout.LayoutParams.WRAP_CONTENT,
@@ -72,18 +82,24 @@ class FiveLines (val contex: Context, val layout: ConstraintLayout) {
             ConstraintLayout.LayoutParams.WRAP_CONTENT,
             ConstraintLayout.LayoutParams.WRAP_CONTENT
         )
+        val lp6 = ConstraintLayout.LayoutParams(
+            ConstraintLayout.LayoutParams.WRAP_CONTENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
 
         textView1.layoutParams = lp1
         textView2.layoutParams = lp2
         textView3.layoutParams = lp3
         textView4.layoutParams = lp4
         textView5.layoutParams = lp5
+        textView6.layoutParams = lp6
 
         layout.addView(textView1)
         layout.addView(textView2)
         layout.addView(textView3)
         layout.addView(textView4)
         layout.addView(textView5)
+        layout.addView(textView6)
 
         val containSet = ConstraintSet()
         containSet.clone(layout)
@@ -254,6 +270,38 @@ class FiveLines (val contex: Context, val layout: ConstraintLayout) {
                 ConstraintSet.BOTTOM,
                 ConstraintSet.PARENT_ID,
                 ConstraintSet.BOTTOM, array[4][3].toPx()
+            )
+        }
+        if (array[5][0] > 0) {
+            containSet.connect(
+                textView6.id,
+                ConstraintSet.LEFT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.LEFT, array[5][0].toPx()
+            )
+        }
+        if (array[5][1] > 0) {
+            containSet.connect(
+                textView6.id,
+                ConstraintSet.TOP,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.TOP, array[5][1].toPx()
+            )
+        }
+        if (array[5][2]>0) {
+            containSet.connect(
+                textView6.id,
+                ConstraintSet.RIGHT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.RIGHT, array[5][2].toPx()
+            )
+        }
+        if (array[5][3]>0){
+            containSet.connect(
+                textView6.id,
+                ConstraintSet.BOTTOM,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.BOTTOM, array[5][3].toPx()
             )
         }
 

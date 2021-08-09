@@ -8,14 +8,16 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import coil.load
-import com.sg.generalpost12.postim.FiveLines
-import com.sg.generalpost12.postim.FourLinePost
-import com.sg.generalpost12.postim.TwoLinePost
+import com.sg.generalpost12.postim.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    lateinit var oneLine: OneLinePost
     lateinit var twoLines: TwoLinePost
-    lateinit var fiveLines: FiveLines
+    lateinit var threeLines: ThreeLinePost
+    lateinit var fourLinesPost: FourLinePost
+    lateinit var fiveLinesPost: FiveLinesPost
+    lateinit var sixLinesPost: SixLinePost
 
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
@@ -23,17 +25,79 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        oneLine = OneLinePost (this, mainLayout)
         twoLines = TwoLinePost(this, mainLayout)
-        fiveLines = FiveLines(this, mainLayout)
+        threeLines = ThreeLinePost(this, mainLayout)
+        fourLinesPost = FourLinePost(this, mainLayout)
+        fiveLinesPost = FiveLinesPost(this, mainLayout)
+        sixLinesPost = SixLinePost(this, mainLayout)
 
-
-        //  creatPost1()
-        creatPost2()
+         //post1()      // 2 lines
+        // post2()      // 5 lines
+        // post3()      // 3 lines
+        // post4()      // 6 lines
+            //  post5()      // 2 lines
+              post6()      // 1 lines
 
 
     }
-
-    private fun creatPost2() {
+    private fun post6() {
+        imageView.load(R.drawable.talking)
+        val array = arrayOf(
+            arrayOf(0, 0, 15, 1)
+        )
+        val strings = arrayOf(
+            "כל אחד מדבר את מה שהוא."
+        )
+        oneLine.createPost1("#263238", strings, array, 23f)
+    }
+    private fun post5() {
+        imageView.load(R.drawable.pinocchio)
+        val array = arrayOf(
+            arrayOf(0, 0, 10, 40),
+            arrayOf(0, 0, 40, 10)
+        )
+        val strings = arrayOf(
+            "לאמת פנים רבות",
+            "אחד מהם הוא השקר."
+        )
+        twoLines.createPost2(0, strings, array, 26f)
+    }
+    private fun post4() {
+        imageView.load(R.drawable.man)
+        val array = arrayOf(
+            arrayOf(0, 0, 5, 155),
+            arrayOf(0, 0, 5, 125),
+            arrayOf(0, 0, 5, 95),
+            arrayOf(0, 0, 200, 65),
+            arrayOf(0, 0, 5, 35),
+            arrayOf(0, 0, 45, 5)
+        )
+        val strings = arrayOf(
+            "ההבדל בין:",
+            "טמבל רגיל",
+            "לטמבל עם שלושה תארים",
+            "באוניברסיטה",
+            "הוא רק הכבוד",
+            "שאתה חולק לכל אחד מהם."
+        )
+        sixLinesPost.createPost6(0, strings, array, 22f)
+    }
+    private fun post3() {
+        imageView.load(R.drawable.city)
+        val array = arrayOf(
+            arrayOf(0, 0, 5, 65),
+            arrayOf(0, 0, 5, 35),
+            arrayOf(0, 0, 5, 5)
+        )
+        val strings = arrayOf(
+            "הבלי עולם הזה",
+            "זו המציאות הרגילה",
+            "שאין בה קורטוב של קדושה.",
+            )
+        threeLines.createPost3(0, strings, array, 22f)
+    }
+    private fun post2() {
         imageView.load(R.drawable.love)
         val array = arrayOf(
             arrayOf(0, 5, 5, 0),
@@ -44,35 +108,28 @@ class MainActivity : AppCompatActivity() {
         )
         val st1 = "בסוף מה נשאר לך?"
         val st2 = " רק אהבה "
-
         val strings = arrayOf(
             "בזמנים שהכול נשבר מסביב",
             "וכל גל נראה מאיים ואינסופי",
             "ניזכר במשפט של אריק איינשטיין בערוב ימיו:",
-            "\""+st1,
-            st2+"\""
+            "\"" + st1,
+            st2 + "\""
         )
-        fiveLines.createPost5(1,strings, array, 18f)
+        fiveLinesPost.createPost5(1, strings, array, 18f)
     }
-
-    private fun creatPost1() {
+    private fun post1() {
         imageView.load(R.drawable.sad)
         val array = arrayOf(
             arrayOf(0, 0, 10, 40),
             arrayOf(0, 0, 40, 10)
         )
-        twoLines.createPost2(
+        val strings = arrayOf(
             "אין בעיות בעולם",
-            "חוץ מאלה שאצלך בראש",
-            array, 26f
+            "חוץ מאלה שאצלך בראש"
         )
+        twoLines.createPost2(0, strings, array, 26f)
     }
 
-
-    private fun post1() {
-        imageView.load(R.drawable.sad)
-        twoLineText("אין בעיות בעולם", "חוץ מאלה שאצלך בראש", 24f)
-    }
 
     private fun twoLineText(strig1: String, string2: String, textSize: Float) {
         val textView = TextView(this)

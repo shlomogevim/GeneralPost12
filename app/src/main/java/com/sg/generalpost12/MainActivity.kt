@@ -25,32 +25,36 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        oneLine = OneLinePost (this, mainLayout)
+        oneLine = OneLinePost(this, mainLayout)
         twoLines = TwoLinePost(this, mainLayout)
         threeLines = ThreeLinePost(this, mainLayout)
         fourLinesPost = FourLinePost(this, mainLayout)
         fiveLinesPost = FiveLinesPost(this, mainLayout)
         sixLinesPost = SixLinePost(this, mainLayout)
 
-         //post1()      // 2 lines
+        //post1()      // 2 lines
         // post2()      // 5 lines
         // post3()      // 3 lines
         // post4()      // 6 lines
-            //  post5()      // 2 lines
-              post6()      // 1 lines
+        //  post5()      // 2 lines
+        post6()      // 1 lines
 
 
     }
+
     private fun post6() {
-        imageView.load(R.drawable.talking)
-        val array = arrayOf(
-            arrayOf(0, 0, 15, 1)
-        )
+       imageView.load(R.drawable.talking)
         val strings = arrayOf(
             "כל אחד מדבר את מה שהוא."
         )
-        oneLine.createPost1("#263238", strings, array, 23f)
+        val margin = arrayOf(
+            arrayOf(0, 0, 15, 1)
+        )
+        val padding = arrayOf(30, 0, 30, 0)
+
+        oneLine.createPost1("263238", 3, strings, margin, padding, 23f)
     }
+
     private fun post5() {
         imageView.load(R.drawable.pinocchio)
         val array = arrayOf(
@@ -63,6 +67,7 @@ class MainActivity : AppCompatActivity() {
         )
         twoLines.createPost2(0, strings, array, 26f)
     }
+
     private fun post4() {
         imageView.load(R.drawable.man)
         val array = arrayOf(
@@ -83,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         )
         sixLinesPost.createPost6(0, strings, array, 22f)
     }
+
     private fun post3() {
         imageView.load(R.drawable.city)
         val array = arrayOf(
@@ -94,9 +100,10 @@ class MainActivity : AppCompatActivity() {
             "הבלי עולם הזה",
             "זו המציאות הרגילה",
             "שאין בה קורטוב של קדושה.",
-            )
+        )
         threeLines.createPost3(0, strings, array, 22f)
     }
+
     private fun post2() {
         imageView.load(R.drawable.love)
         val array = arrayOf(
@@ -117,6 +124,7 @@ class MainActivity : AppCompatActivity() {
         )
         fiveLinesPost.createPost5(1, strings, array, 18f)
     }
+
     private fun post1() {
         imageView.load(R.drawable.sad)
         val array = arrayOf(

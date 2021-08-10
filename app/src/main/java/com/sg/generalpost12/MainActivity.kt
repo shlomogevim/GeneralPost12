@@ -32,18 +32,23 @@ class MainActivity : AppCompatActivity() {
         fiveLinesPost = FiveLinesPost(this, mainLayout)
         sixLinesPost = SixLinePost(this, mainLayout)
 
-        //post1()      // 2 lines
-        // post2()      // 5 lines
-        // post3()      // 3 lines
-        // post4()      // 6 lines
-        //  post5()      // 2 lines
-        post6()      // 1 lines
+
+        //  post10()      // 1 lines
+
+       // post20()      // 2 lines
+      //  post21()      // 2 lines
+
+      //   post30()      // 3 lines
+
+       //  post50()      // 5 lines
+
+         post60()      // 6 lines
 
 
     }
 
-    private fun post6() {
-       imageView.load(R.drawable.talking)
+    private fun post10() {
+        imageView.load(R.drawable.talking)
         val strings = arrayOf(
             "כל אחד מדבר את מה שהוא."
         )
@@ -55,29 +60,79 @@ class MainActivity : AppCompatActivity() {
         oneLine.createPost1("263238", 3, strings, margin, padding, 23f)
     }
 
-    private fun post5() {
-        imageView.load(R.drawable.pinocchio)
-        val array = arrayOf(
-            arrayOf(0, 0, 10, 40),
-            arrayOf(0, 0, 40, 10)
+    private fun post20() {
+        imageView.load(R.drawable.sad)
+        val strings = arrayOf(
+            "אין בעיות בעולם",
+            "חוץ מאלה שאצלך בראש"
         )
+        val margin = arrayOf(
+            arrayOf(0, 0, 10, 40),
+            arrayOf(0, 0, 40, 2)
+        )
+        val padding = arrayOf(0, 0, 0, 0)
+
+        twoLines.createPost2("263238", 4, strings, margin, padding, 26f)
+    }
+
+    private fun post21() {
+        imageView.load(R.drawable.pinocchio)
         val strings = arrayOf(
             "לאמת פנים רבות",
             "אחד מהם הוא השקר."
         )
-        twoLines.createPost2(0, strings, array, 26f)
+        val margin = arrayOf(
+            arrayOf(0, 0, 10, 40),
+            arrayOf(0, 0, 2, 2)
+        )
+        val padding = arrayOf(0, 0, 0, 0)
+
+          twoLines.createPost2("263238", 4, strings, margin, padding, 26f)
     }
 
-    private fun post4() {
-        imageView.load(R.drawable.man)
-        val array = arrayOf(
-            arrayOf(0, 0, 5, 155),
-            arrayOf(0, 0, 5, 125),
-            arrayOf(0, 0, 5, 95),
-            arrayOf(0, 0, 200, 65),
-            arrayOf(0, 0, 5, 35),
-            arrayOf(0, 0, 45, 5)
+    private fun post30() {
+        imageView.load(R.drawable.city)
+        val strings = arrayOf(
+            "הבלי עולם הזה",
+            "זו המציאות הרגילה",
+            "שאין בה קורטוב של קדושה.",
         )
+        val margin = arrayOf(
+            arrayOf(0, 0, 5, 48),
+            arrayOf(0, 0, 10, 25),
+            arrayOf(0, 0, 15, 2)
+        )
+        val padding = arrayOf(0, 0, 0, 0)
+
+        threeLines.createPost3("263238", 0, strings, margin, padding, 24f)
+    }
+
+    private fun post50() {
+        imageView.load(R.drawable.love)
+        val st1 = "בסוף מה נשאר לך?"
+        val st2 = " רק אהבה "
+
+        val strings = arrayOf(
+            "בזמנים שהכול נשבר מסביב",
+            "וכל גל נראה מאיים ואינסופי",
+            "ניזכר במשפט של אריק איינשטיין בערוב ימיו:",
+            "\"" + st1,
+            st2 + "\""
+        )
+        val margin = arrayOf(
+            arrayOf(0, 5, 5, 0),
+            arrayOf(0, 35, 5, 0),
+            arrayOf(0, 65, 5, 0),
+            arrayOf(0, 125, 5, 0),
+            arrayOf(0, 155, 220, 0)
+        )
+        val padding = arrayOf(0, 0, 0, 0)
+
+        fiveLinesPost.createPost5("263238", 0, strings, margin, padding, 24f)
+    }
+
+    private fun post60() {
+        imageView.load(R.drawable.man)
         val strings = arrayOf(
             "ההבדל בין:",
             "טמבל רגיל",
@@ -86,57 +141,22 @@ class MainActivity : AppCompatActivity() {
             "הוא רק הכבוד",
             "שאתה חולק לכל אחד מהם."
         )
-        sixLinesPost.createPost6(0, strings, array, 22f)
-    }
-
-    private fun post3() {
-        imageView.load(R.drawable.city)
-        val array = arrayOf(
-            arrayOf(0, 0, 5, 65),
+        val margin = arrayOf(
+            arrayOf(0, 0, 5, 155),
+            arrayOf(0, 0, 5, 125),
+            arrayOf(0, 0, 5, 95),
+            arrayOf(0, 0, 200, 65),
             arrayOf(0, 0, 5, 35),
-            arrayOf(0, 0, 5, 5)
+            arrayOf(0, 0, 45, 5)
         )
-        val strings = arrayOf(
-            "הבלי עולם הזה",
-            "זו המציאות הרגילה",
-            "שאין בה קורטוב של קדושה.",
-        )
-        threeLines.createPost3(0, strings, array, 22f)
+        val padding = arrayOf(0, 0, 0, 0)
+
+        sixLinesPost.createPost6("263238", 6, strings, margin, padding, 24f)
     }
 
-    private fun post2() {
-        imageView.load(R.drawable.love)
-        val array = arrayOf(
-            arrayOf(0, 5, 5, 0),
-            arrayOf(0, 35, 5, 0),
-            arrayOf(0, 65, 5, 0),
-            arrayOf(0, 115, 35, 0),
-            arrayOf(0, 150, 220, 0)
-        )
-        val st1 = "בסוף מה נשאר לך?"
-        val st2 = " רק אהבה "
-        val strings = arrayOf(
-            "בזמנים שהכול נשבר מסביב",
-            "וכל גל נראה מאיים ואינסופי",
-            "ניזכר במשפט של אריק איינשטיין בערוב ימיו:",
-            "\"" + st1,
-            st2 + "\""
-        )
-        fiveLinesPost.createPost5(1, strings, array, 18f)
-    }
 
-    private fun post1() {
-        imageView.load(R.drawable.sad)
-        val array = arrayOf(
-            arrayOf(0, 0, 10, 40),
-            arrayOf(0, 0, 40, 10)
-        )
-        val strings = arrayOf(
-            "אין בעיות בעולם",
-            "חוץ מאלה שאצלך בראש"
-        )
-        twoLines.createPost2(0, strings, array, 26f)
-    }
+
+
 
 
     private fun twoLineText(strig1: String, string2: String, textSize: Float) {

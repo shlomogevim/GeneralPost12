@@ -9,7 +9,7 @@ import android.widget.TextView
 
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import androidx.core.view.marginLeft
+import androidx.core.content.res.ResourcesCompat
 import com.sg.generalpost12.data.Helper
 
 class OneLinePost(val contex: Context, val layout: ConstraintLayout) {
@@ -19,22 +19,30 @@ class OneLinePost(val contex: Context, val layout: ConstraintLayout) {
 
     fun createPost1(
         backGround: String,
-        tran: Int,
+        tran: Int=0,
         strings: Array<String>,
         margin: Array<Array<Int>>,
         padding: Array<Int>,
-        textSize: Float
+        textSize: Float,
+        textColor:String="f6ff03",
+        fontFamily:Int=0
+
     ) {
         val textView1 = TextView(contex)
         textView1.id = View.generateViewId()
         textView1.text = strings[0]
         textView1.textSize = textSize
-        textView1.gravity = Gravity.CENTER
+        textView1.setTextColor(Color.parseColor("#$textColor"))
+
+        val fontAddress=helper.getFamilyFont(fontFamily)
+        textView1.typeface = ResourcesCompat.getFont(contex, fontAddress)
 
         val tra = helper.getTransfo(tran)
-        textView1.setBackgroundColor(Color.parseColor("#" + tra + backGround))
+        textView1.setBackgroundColor(Color.parseColor("#$tra$backGround"))
 
-        textView1.setPadding(padding[0], padding[1], padding[2], padding[3])
+        textView1.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
+
+        textView1.gravity = Gravity.CENTER
 
         val lp1 = ConstraintLayout.LayoutParams(
             ConstraintLayout.LayoutParams.WRAP_CONTENT,

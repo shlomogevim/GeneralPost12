@@ -3,6 +3,7 @@ package com.sg.generalpost12.postim
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.view.Gravity
 import android.view.View
 import android.widget.TextView
@@ -19,28 +20,48 @@ class OneLinePost(val contex: Context, val layout: ConstraintLayout) {
 
     fun createPost1(
         backGround: String,
-        tran: Int=0,
+        tran: Int = 0,
         strings: Array<String>,
         margin: Array<Array<Int>>,
         padding: Array<Int>,
         textSize: Float,
-        textColor:String="f6ff03",
-        fontFamily:Int=0
-
+        textColor: String = "f6ff03",
+        fontFamily: Int = 0,
+        radius: Int = 0
     ) {
+        /*
+        val textView1 = TextView(contex)
+        textView1.text = strings[0]
+        textView1.textSize = textSize
+        textView1.id = View.generateViewId()
+        textView1.background=shape
+        textView1.typeface = ResourcesCompat.getFont(contex, fontAddress)
+      //  textView1.setBackgroundColor(Color.parseColor("#$tra$backGround"))
+        textView1.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
+        textView1.gravity = Gravity.CENTER*/
+
+        val fontAddress=helper.getFamilyFont(fontFamily)
+        val tra = helper.getTransfo(tran)
+        val shape= GradientDrawable()
+        shape.cornerRadius=radius.toPx().toFloat()
+        shape.setColor(Color.parseColor("#$tra$backGround"))
+
+
         val textView1 = TextView(contex)
         textView1.id = View.generateViewId()
         textView1.text = strings[0]
         textView1.textSize = textSize
         textView1.setTextColor(Color.parseColor("#$textColor"))
-
-        val fontAddress=helper.getFamilyFont(fontFamily)
+        textView1.background=shape
         textView1.typeface = ResourcesCompat.getFont(contex, fontAddress)
+      //  textView1.setBackgroundColor(Color.parseColor("#$tra$backGround"))
 
-        val tra = helper.getTransfo(tran)
-        textView1.setBackgroundColor(Color.parseColor("#$tra$backGround"))
-
-        textView1.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
+        textView1.setPadding(
+            padding[0].toPx(),
+            padding[1].toPx(),
+            padding[2].toPx(),
+            padding[3].toPx()
+        )
 
         textView1.gravity = Gravity.CENTER
 

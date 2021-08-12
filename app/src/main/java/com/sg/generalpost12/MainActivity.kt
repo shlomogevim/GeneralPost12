@@ -3,10 +3,6 @@ package com.sg.generalpost12
 import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import coil.load
 import com.sg.generalpost12.postim.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,6 +14,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var fourLinesPost: FourLinePost
     lateinit var fiveLinesPost: FiveLinesPost
     lateinit var sixLinesPost: SixLinePost
+    lateinit var nineLinesPost: NineLinePost
 
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
@@ -31,18 +28,23 @@ class MainActivity : AppCompatActivity() {
         fourLinesPost = FourLinePost(this, mainLayout)
         fiveLinesPost = FiveLinesPost(this, mainLayout)
         sixLinesPost = SixLinePost(this, mainLayout)
+        nineLinesPost = NineLinePost(this, mainLayout)
 
 
-        //  post10()      // 1 lines
+        //  post10()
 
-       // post20()      // 2 lines
-      //  post21()      // 2 lines
+      //  post20()
+        //  post21()
 
-      //   post30()      // 3 lines
+        //   post30()
 
-       //  post50()      // 5 lines
+        //  post40()
 
-         post60()      // 6 lines
+        //  post50()
+        //  post51()
+
+        //  post60()
+        post90()
 
 
     }
@@ -55,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         val margin = arrayOf(
             arrayOf(0, 0, 15, 1)
         )
-        val padding = arrayOf(30, 0, 30, 0)
+        val padding = arrayOf(10, 0, 10, 0)
 
         oneLine.createPost1("263238", 3, strings, margin, padding, 23f)
     }
@@ -67,12 +69,12 @@ class MainActivity : AppCompatActivity() {
             "חוץ מאלה שאצלך בראש"
         )
         val margin = arrayOf(
-            arrayOf(0, 0, 10, 40),
-            arrayOf(0, 0, 40, 2)
+            arrayOf(0, 0, 20, 40),
+            arrayOf(0, 0, 50, 2)
         )
-        val padding = arrayOf(0, 0, 0, 0)
+        val padding = arrayOf(10, 0, 10, 0)
 
-        twoLines.createPost2("263238", 4, strings, margin, padding, 26f)
+        twoLines.createPost2("263238", 10, strings, margin, padding, 26f, radius = 20)
     }
 
     private fun post21() {
@@ -87,7 +89,7 @@ class MainActivity : AppCompatActivity() {
         )
         val padding = arrayOf(0, 0, 0, 0)
 
-          twoLines.createPost2("263238", 4, strings, margin, padding, 26f)
+        twoLines.createPost2("263238", 4, strings, margin, padding, 26f)
     }
 
     private fun post30() {
@@ -105,6 +107,26 @@ class MainActivity : AppCompatActivity() {
         val padding = arrayOf(0, 0, 0, 0)
 
         threeLines.createPost3("263238", 0, strings, margin, padding, 24f)
+    }
+
+    private fun post40() {
+        imageView.load(R.drawable.climb)
+        val strings = arrayOf(
+            "על תהיה הכי טוב",
+            "זה לא יצליח לך לאורך זמן,",
+            "לך על משהו יותר ממשי",
+            "תהיה הכי אתה."
+
+        )
+        val margin = arrayOf(
+            arrayOf(0, 5, 5, 0),
+            arrayOf(0, 45, 10, 0),
+            arrayOf(0, 85, 40, 0),
+            arrayOf(0, 125, 160, 0)
+        )
+        val padding = arrayOf(5, 0, 5, 0)
+
+        fourLinesPost.createPost4("263238", 2, strings, margin, padding, 24f, radius = 10)
     }
 
     private fun post50() {
@@ -131,100 +153,91 @@ class MainActivity : AppCompatActivity() {
         fiveLinesPost.createPost5("263238", 0, strings, margin, padding, 24f)
     }
 
+    private fun post51() {
+        imageView.load(R.drawable.man)
+        val strings = arrayOf(
+            "ההבדל בין:",
+            "טמבל רגיל",
+            "לטמבל עם תואר של דוקטור",
+            "הוא רק הכבוד",
+            "שאתה חולק לכל אחד מהם."
+        )
+        val margin = arrayOf(
+            arrayOf(0, 5, 5, 0),
+            arrayOf(0, 35, 10, 0),
+            arrayOf(0, 65, 15, 0),
+            arrayOf(0, 95, 20, 0),
+            arrayOf(0, 130, 40, 0)
+        )
+        val padding = arrayOf(0, 0, 0, 0)
+
+        fiveLinesPost.createPost5("263238", 7, strings, margin, padding, 24f)
+    }
+
     private fun post60() {
         imageView.load(R.drawable.man)
         val strings = arrayOf(
             "ההבדל בין:",
             "טמבל רגיל",
-            "לטמבל עם שלושה תארים",
-            "באוניברסיטה",
+            "לטמבל עם תואר של דוקטור",
+            "הוא רק הכבוד",
             "הוא רק הכבוד",
             "שאתה חולק לכל אחד מהם."
         )
         val margin = arrayOf(
-            arrayOf(0, 0, 5, 155),
-            arrayOf(0, 0, 5, 125),
-            arrayOf(0, 0, 5, 95),
-            arrayOf(0, 0, 200, 65),
-            arrayOf(0, 0, 5, 35),
-            arrayOf(0, 0, 45, 5)
+            arrayOf(0, 5, 5, 0),
+            arrayOf(0, 35, 10, 0),
+            arrayOf(0, 65, 15, 0),
+            arrayOf(0, 95, 20, 0),
+            arrayOf(0, 95, 20, 0),
+            arrayOf(0, 130, 40, 0)
         )
         val padding = arrayOf(0, 0, 0, 0)
 
-        sixLinesPost.createPost6("263238", 6, strings, margin, padding, 24f)
+        sixLinesPost.createPost6("263238", 7, strings, margin, padding, 24f)
+    }
+
+    private fun post90() {
+        imageView.load(R.drawable.night)
+        val strings = arrayOf(
+            "זה שהסתדרת עם השנים זה לא אומר שאתה מסודר,",
+            "זה שאתה עסוק כל הזמן זה לא אומר שאתה עושה משהו,",
+            "זה שאתה אוכל כל הזמן זה לא אומר שאתה שבע,",
+            "זה שיש לך הכל זה לא אומר שאתה לא רוצה עוד,",
+            "זה שאתה נח כל היום זה לא אומר שאתה לא עייף,",
+            "זה שיש לך חברים זה לא אומר שאתה לא בודד,",
+            "זה שהחכמת עם השנים זה לא אומר שאתה חכם,",
+            "זה שאתה לא עושה שום דבר זה לא אומר שיש לך זמן,",
+            "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
+
+        )
+        val margin = arrayOf(
+            arrayOf(0, 0, 2, 0),
+            arrayOf(0, 70, 2, 0),
+            arrayOf(0, 140, 2, 0),
+            arrayOf(0, 210, 2, 0),
+            arrayOf(0, 280, 2, 0),
+            arrayOf(0, 350, 2, 0),
+            arrayOf(0, 420, 2, 0),
+            arrayOf(0, 490, 2, 0),
+            arrayOf(0, 560, 2, 0)
+        )
+        val padding = arrayOf(5, 0, 5, 0)
+
+        nineLinesPost.createPost9(
+            "263238",
+            2,
+            strings,
+            margin,
+            padding,
+            25f,
+            textColor = "f6ff03",
+            radius = 10,
+            fontFamily =0
+        )
     }
 
 
 
 
-
-
-    private fun twoLineText(strig1: String, string2: String, textSize: Float) {
-        val textView = TextView(this)
-        textView.text = strig1
-        textView.textSize = textSize
-        textView.id = View.generateViewId()
-
-        val textView1 = TextView(this)
-        textView1.text = string2
-        textView1.textSize = textSize
-        textView1.id = View.generateViewId()
-
-
-        val lp = ConstraintLayout.LayoutParams(
-            ConstraintLayout.LayoutParams.WRAP_CONTENT,
-            ConstraintLayout.LayoutParams.WRAP_CONTENT
-        )
-        val lp1 = ConstraintLayout.LayoutParams(
-            ConstraintLayout.LayoutParams.WRAP_CONTENT,
-            ConstraintLayout.LayoutParams.WRAP_CONTENT
-        )
-
-        textView.layoutParams = lp
-        textView1.layoutParams = lp1
-
-        mainLayout.addView(textView)
-        mainLayout.addView(textView1)
-
-        val containSet = ConstraintSet()
-        containSet.clone(mainLayout)
-
-        /*containSet.connect(textView.id,
-            ConstraintSet.LEFT,
-            ConstraintSet.PARENT_ID,
-            ConstraintSet.LEFT,100.toPx())*/
-        containSet.connect(
-            textView.id,
-            ConstraintSet.TOP,
-            ConstraintSet.PARENT_ID,
-            ConstraintSet.TOP, 550.toPx()
-        )
-        containSet.connect(
-            textView.id,
-            ConstraintSet.RIGHT,
-            ConstraintSet.PARENT_ID,
-            ConstraintSet.RIGHT,
-            10.toPx()
-        )
-        //  containSet.connect(textView.id,ConstraintSet.BOTTOM,ConstraintSet.PARENT_ID,ConstraintSet.BOTTOM,100.toPx())
-
-        containSet.connect(
-            textView1.id,
-            ConstraintSet.LEFT,
-            ConstraintSet.PARENT_ID,
-            ConstraintSet.LEFT, 10.toPx()
-        )
-        containSet.connect(
-            textView1.id,
-            ConstraintSet.TOP,
-            ConstraintSet.PARENT_ID,
-            ConstraintSet.TOP, 580.toPx()
-        )
-        //containSet.connect(textView.id,ConstraintSet.RIGHT,ConstraintSet.PARENT_ID,ConstraintSet.RIGHT,100.toPx())
-        //  containSet.connect(textView.id,ConstraintSet.BOTTOM,ConstraintSet.PARENT_ID,ConstraintSet.BOTTOM,100.toPx())
-
-
-        containSet.applyTo(mainLayout)
-
-    }
 }

@@ -12,13 +12,13 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.res.ResourcesCompat
 import com.sg.generalpost12.data.Helper
 
-class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
-
+class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
 
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
     val helper = Helper()
 
-    fun createPost4(
+
+    fun createPost9(
         backGround: String,
         tran: Int=0,
         strings: Array<String>,
@@ -31,7 +31,7 @@ class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
     ) {
         val fontAddress=helper.getFamilyFont(fontFamily)
         val tra = helper.getTransfo(tran)
-        val shape=GradientDrawable()
+        val shape= GradientDrawable()
         shape.cornerRadius=radius.toPx().toFloat()
         shape.setColor(Color.parseColor("#$tra$backGround"))
 
@@ -41,7 +41,6 @@ class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
         textView1.id = View.generateViewId()
         textView1.background=shape
         textView1.typeface = ResourcesCompat.getFont(contex, fontAddress)
-      //  textView1.setBackgroundColor(Color.parseColor("#$tra$backGround"))
         textView1.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
         textView1.gravity = Gravity.CENTER
 
@@ -51,7 +50,7 @@ class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
         textView2.textSize = textSize
         textView2.id = View.generateViewId()
         textView2.typeface = ResourcesCompat.getFont(contex, fontAddress)
-       // textView2.setBackgroundColor(Color.parseColor("#$tra$backGround"))
+        // textView2.setBackgroundColor(Color.parseColor("#$tra$backGround"))
         textView2.background=shape
         textView2.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
         textView2.gravity = Gravity.CENTER
@@ -61,7 +60,6 @@ class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
         textView3.textSize = textSize
         textView3.id = View.generateViewId()
         textView3.typeface = ResourcesCompat.getFont(contex, fontAddress)
-      //  textView3.setBackgroundColor(Color.parseColor("#$tra$backGround"))
         textView3.background=shape
         textView3.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
         textView3.gravity = Gravity.CENTER
@@ -71,40 +69,54 @@ class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
         textView4.textSize = textSize
         textView4.id = View.generateViewId()
         textView4.typeface = ResourcesCompat.getFont(contex, fontAddress)
-      //  textView4.setBackgroundColor(Color.parseColor("#$tra$backGround"))
         textView4.background=shape
         textView4.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
         textView4.gravity = Gravity.CENTER
-/*
 
         val textView5 = TextView(contex)
         textView5.text = strings[4]
         textView5.textSize = textSize
         textView5.id = View.generateViewId()
         textView5.typeface = ResourcesCompat.getFont(contex, fontAddress)
-        textView5.setBackgroundColor(Color.parseColor("#$tra$backGround"))
+        textView5.background=shape
         textView5.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
         textView5.gravity = Gravity.CENTER
-*/
 
-        /* val textView4 = TextView(contex)
-         textView4.text = strings[3]
-         if (index==1){
-             textView4.textSize = 20f
-         }else {
-             textView4.textSize = textSize
-         }
-         textView4.id = View.generateViewId()
+        val textView6 = TextView(contex)
+        textView6.text = strings[5]
+        textView6.textSize = textSize
+        textView6.id = View.generateViewId()
+        textView6.typeface = ResourcesCompat.getFont(contex, fontAddress)
+        textView6.background=shape
+        textView6.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
+        textView6.gravity = Gravity.CENTER
 
-         val textView5 = TextView(contex)
-         textView5.text = strings[4]
-         if (index==1){
-             textView5.textSize = 24f
-         }else {
-             textView5.textSize = textSize
-         }
-         textView5.id = View.generateViewId()*/
+        val textView7 = TextView(contex)
+        textView7.text = strings[6]
+        textView7.textSize = textSize
+        textView7.id = View.generateViewId()
+        textView7.typeface = ResourcesCompat.getFont(contex, fontAddress)
+        textView7.background=shape
+        textView7.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
+        textView7.gravity = Gravity.CENTER
 
+        val textView8 = TextView(contex)
+        textView8.text = strings[7]
+        textView8.textSize = textSize
+        textView8.id = View.generateViewId()
+        textView8.typeface = ResourcesCompat.getFont(contex, fontAddress)
+        textView8.background=shape
+        textView8.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
+        textView8.gravity = Gravity.CENTER
+
+        val textView9 = TextView(contex)
+        textView9.text = strings[8]
+        textView9.textSize = textSize
+        textView9.id = View.generateViewId()
+        textView9.typeface = ResourcesCompat.getFont(contex, fontAddress)
+        textView9.background=shape
+        textView9.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
+        textView9.gravity = Gravity.CENTER
 
         val lp1 = ConstraintLayout.LayoutParams(
             ConstraintLayout.LayoutParams.WRAP_CONTENT,
@@ -122,22 +134,46 @@ class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
             ConstraintLayout.LayoutParams.WRAP_CONTENT,
             ConstraintLayout.LayoutParams.WRAP_CONTENT
         )
-      /*  val lp5 = ConstraintLayout.LayoutParams(
+          val lp5 = ConstraintLayout.LayoutParams(
+              ConstraintLayout.LayoutParams.WRAP_CONTENT,
+              ConstraintLayout.LayoutParams.WRAP_CONTENT
+          )
+        val lp6 = ConstraintLayout.LayoutParams(
             ConstraintLayout.LayoutParams.WRAP_CONTENT,
             ConstraintLayout.LayoutParams.WRAP_CONTENT
-        )*/
+        )
+        val lp7 = ConstraintLayout.LayoutParams(
+            ConstraintLayout.LayoutParams.WRAP_CONTENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
+        val lp8 = ConstraintLayout.LayoutParams(
+            ConstraintLayout.LayoutParams.WRAP_CONTENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
+        val lp9 = ConstraintLayout.LayoutParams(
+            ConstraintLayout.LayoutParams.WRAP_CONTENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
 
         textView1.layoutParams = lp1
         textView2.layoutParams = lp2
         textView3.layoutParams = lp3
         textView4.layoutParams = lp4
-      //  textView5.layoutParams = lp5
+        textView5.layoutParams = lp5
+        textView5.layoutParams = lp6
+        textView5.layoutParams = lp7
+        textView5.layoutParams = lp8
+        textView5.layoutParams = lp9
 
         layout.addView(textView1)
         layout.addView(textView2)
         layout.addView(textView3)
         layout.addView(textView4)
-    //    layout.addView(textView5)
+        layout.addView(textView5)
+        layout.addView(textView6)
+        layout.addView(textView7)
+        layout.addView(textView8)
+        layout.addView(textView9)
 
         val containSet = ConstraintSet()
         containSet.clone(layout)
@@ -174,8 +210,6 @@ class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
                 ConstraintSet.BOTTOM,margin[0][3].toPx()
             )
         }
-        //  containSet.connect(textView.id,ConstraintSet.BOTTOM,ConstraintSet.PARENT_ID,ConstraintSet.BOTTOM,100.toPx())
-
 
         if (margin[1][0] > 0) {
             containSet.connect(
@@ -209,8 +243,7 @@ class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
                 ConstraintSet.BOTTOM, margin[1][3].toPx()
             )
         }
-        //containSet.connect(textView1.id,ConstraintSet.RIGHT,ConstraintSet.PARENT_ID,ConstraintSet.RIGHT,100.toPx())
-        //  containSet.connect(textView1.id,ConstraintSet.BOTTOM,ConstraintSet.PARENT_ID,ConstraintSet.BOTTOM,100.toPx())
+
         if (margin[2][0] > 0) {
             containSet.connect(
                 textView3.id,
@@ -278,38 +311,169 @@ class FourLinePost (val contex: Context, val layout: ConstraintLayout) {
             )
         }
 
-       /* if (margin[4][0] > 0) {
+         if (margin[4][0] > 0) {
+             containSet.connect(
+                 textView5.id,
+                 ConstraintSet.LEFT,
+                 ConstraintSet.PARENT_ID,
+                 ConstraintSet.LEFT, margin[4][0].toPx()
+             )
+         }
+         if (margin[4][1] > 0) {
+             containSet.connect(
+                 textView5.id,
+                 ConstraintSet.TOP,
+                 ConstraintSet.PARENT_ID,
+                 ConstraintSet.TOP, margin[4][1].toPx()
+             )
+         }
+         if (margin[4][2]>0) {
+             containSet.connect(
+                 textView5.id,
+                 ConstraintSet.RIGHT,
+                 ConstraintSet.PARENT_ID,
+                 ConstraintSet.RIGHT, margin[4][2].toPx()
+             )
+         }
+         if (margin[4][3]>0){
+             containSet.connect(
+                 textView5.id,
+                 ConstraintSet.BOTTOM,
+                 ConstraintSet.PARENT_ID,
+                 ConstraintSet.BOTTOM, margin[4][3].toPx()
+             )
+         }
+
+        if (margin[5][0] > 0) {
             containSet.connect(
-                textView5.id,
+                textView6.id,
                 ConstraintSet.LEFT,
                 ConstraintSet.PARENT_ID,
-                ConstraintSet.LEFT, margin[4][0].toPx()
+                ConstraintSet.LEFT, margin[5][0].toPx()
             )
         }
-        if (margin[4][1] > 0) {
+        if (margin[5][1] > 0) {
             containSet.connect(
-                textView5.id,
+                textView6.id,
                 ConstraintSet.TOP,
                 ConstraintSet.PARENT_ID,
-                ConstraintSet.TOP, margin[4][1].toPx()
+                ConstraintSet.TOP, margin[5][1].toPx()
             )
         }
-        if (margin[4][2]>0) {
+        if (margin[5][2]>0) {
             containSet.connect(
-                textView5.id,
+                textView6.id,
                 ConstraintSet.RIGHT,
                 ConstraintSet.PARENT_ID,
-                ConstraintSet.RIGHT, margin[4][2].toPx()
+                ConstraintSet.RIGHT, margin[5][2].toPx()
             )
         }
-        if (margin[4][3]>0){
+        if (margin[5][3]>0){
             containSet.connect(
-                textView5.id,
+                textView6.id,
                 ConstraintSet.BOTTOM,
                 ConstraintSet.PARENT_ID,
-                ConstraintSet.BOTTOM, margin[4][3].toPx()
+                ConstraintSet.BOTTOM, margin[5][3].toPx()
             )
-        }*/
+        }
+
+        if (margin[6][0] > 0) {
+            containSet.connect(
+                textView7.id,
+                ConstraintSet.LEFT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.LEFT, margin[6][0].toPx()
+            )
+        }
+        if (margin[6][1] > 0) {
+            containSet.connect(
+                textView7.id,
+                ConstraintSet.TOP,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.TOP, margin[6][1].toPx()
+            )
+        }
+        if (margin[6][2]>0) {
+            containSet.connect(
+                textView7.id,
+                ConstraintSet.RIGHT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.RIGHT, margin[6][2].toPx()
+            )
+        }
+        if (margin[6][3]>0){
+            containSet.connect(
+                textView7.id,
+                ConstraintSet.BOTTOM,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.BOTTOM, margin[6][3].toPx()
+            )
+        }
+
+        if (margin[7][0] > 0) {
+            containSet.connect(
+                textView8.id,
+                ConstraintSet.LEFT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.LEFT, margin[7][0].toPx()
+            )
+        }
+        if (margin[7][1] > 0) {
+            containSet.connect(
+                textView8.id,
+                ConstraintSet.TOP,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.TOP, margin[7][1].toPx()
+            )
+        }
+        if (margin[7][2]>0) {
+            containSet.connect(
+                textView8.id,
+                ConstraintSet.RIGHT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.RIGHT, margin[7][2].toPx()
+            )
+        }
+        if (margin[7][3]>0){
+            containSet.connect(
+                textView8.id,
+                ConstraintSet.BOTTOM,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.BOTTOM, margin[7][3].toPx()
+            )
+        }
+        if (margin[8][0] > 0) {
+            containSet.connect(
+                textView9.id,
+                ConstraintSet.LEFT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.LEFT, margin[8][0].toPx()
+            )
+        }
+        if (margin[8][1] > 0) {
+            containSet.connect(
+                textView9.id,
+                ConstraintSet.TOP,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.TOP, margin[8][1].toPx()
+            )
+        }
+        if (margin[8][2]>0) {
+            containSet.connect(
+                textView9.id,
+                ConstraintSet.RIGHT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.RIGHT, margin[8][2].toPx()
+            )
+        }
+        if (margin[8][3]>0){
+            containSet.connect(
+                textView9.id,
+                ConstraintSet.BOTTOM,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.BOTTOM, margin[8][3].toPx()
+            )
+        }
 
         containSet.applyTo(layout)
 

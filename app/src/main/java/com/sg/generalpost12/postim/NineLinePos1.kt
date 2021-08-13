@@ -1,5 +1,7 @@
 package com.sg.generalpost12.postim
 
+
+
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
@@ -10,22 +12,24 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.res.ResourcesCompat
+import com.sg.generalpost12.data.CONSTANT
 import com.sg.generalpost12.data.Helper
 
-class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
+class NineLinePost1  (val contex: Context, val layout: ConstraintLayout) {
 
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
     val helper = Helper()
 
 
-    fun createPost9(
+    fun createPost91(
         backGround: String,
         tran: Int=0,
         strings: Array<String>,
         margin: Array<Array<Int>>,
         padding: Array<Int>,
-        textSize: Float,
-      //  textColor:String="f6ff03",
+        textSizeArray: Array<Int>,
+        //textColor:String="f6ff03",
+        textColorArray:Array<String>,
         fontFamily:Int=0,
         radius:Int=0
     ) {
@@ -37,7 +41,16 @@ class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
 
         val textView1 = TextView(contex)
         textView1.text = strings[0]
-        textView1.textSize = textSize
+        if (textColorArray[0]== CONSTANT){
+            textView1.setTextColor(Color.parseColor(textColorArray[1]))
+        }else{
+            textView1.setTextColor(Color.parseColor(textColorArray[1]))
+        }
+        if (textSizeArray[0]==0){
+            textView1.textSize=textSizeArray[1].toFloat()
+        } else{
+            textView1.textSize=textSizeArray[1].toFloat()
+        }
         textView1.id = View.generateViewId()
         textView1.background=shape
         textView1.typeface = ResourcesCompat.getFont(contex, fontAddress)
@@ -47,9 +60,18 @@ class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
 
         val textView2 = TextView(contex)
         textView2.text = strings[1]
-        textView2.textSize = textSize
+        if (textSizeArray[0]==0){
+            textView2.textSize=textSizeArray[1].toFloat()
+        } else{
+            textView2.textSize=textSizeArray[2].toFloat()
+        }
         textView2.id = View.generateViewId()
         textView2.typeface = ResourcesCompat.getFont(contex, fontAddress)
+        if (textColorArray[0]== CONSTANT){
+            textView2.setTextColor(Color.parseColor(textColorArray[1]))
+        }else{
+            textView2.setTextColor(Color.parseColor(textColorArray[2]))
+        }
         // textView2.setBackgroundColor(Color.parseColor("#$tra$backGround"))
         textView2.background=shape
         textView2.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
@@ -57,25 +79,52 @@ class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
 
         val textView3 = TextView(contex)
         textView3.text = strings[2]
-        textView3.textSize = textSize
+        if (textSizeArray[0]==0){
+            textView3.textSize=textSizeArray[1].toFloat()
+        } else{
+            textView3.textSize=textSizeArray[3].toFloat()
+        }
         textView3.id = View.generateViewId()
         textView3.typeface = ResourcesCompat.getFont(contex, fontAddress)
+        if (textColorArray[0]== CONSTANT){
+            textView3.setTextColor(Color.parseColor(textColorArray[1]))
+        }else{
+            textView3.setTextColor(Color.parseColor(textColorArray[3]))
+        }
         textView3.background=shape
         textView3.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
         textView3.gravity = Gravity.CENTER
 
         val textView4 = TextView(contex)
         textView4.text = strings[3]
-        textView4.textSize = textSize
+        if (textSizeArray[0]==0){
+            textView4.textSize=textSizeArray[1].toFloat()
+        } else{
+            textView4.textSize=textSizeArray[4].toFloat()
+        }
         textView4.id = View.generateViewId()
         textView4.typeface = ResourcesCompat.getFont(contex, fontAddress)
+        if (textColorArray[0]== CONSTANT){
+            textView4.setTextColor(Color.parseColor(textColorArray[1]))
+        }else{
+            textView4.setTextColor(Color.parseColor(textColorArray[4]))
+        }
         textView4.background=shape
         textView4.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
         textView4.gravity = Gravity.CENTER
 
         val textView5 = TextView(contex)
         textView5.text = strings[4]
-        textView5.textSize = textSize
+        if (textSizeArray[0]==0){
+            textView5.textSize=textSizeArray[1].toFloat()
+        } else{
+            textView5.textSize=textSizeArray[5].toFloat()
+        }
+        if (textColorArray[0]== CONSTANT){
+            textView5.setTextColor(Color.parseColor(textColorArray[1]))
+        }else{
+            textView5.setTextColor(Color.parseColor(textColorArray[5]))
+        }
         textView5.id = View.generateViewId()
         textView5.typeface = ResourcesCompat.getFont(contex, fontAddress)
         textView5.background=shape
@@ -84,7 +133,16 @@ class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
 
         val textView6 = TextView(contex)
         textView6.text = strings[5]
-        textView6.textSize = textSize
+        if (textSizeArray[0]==0){
+            textView6.textSize=textSizeArray[1].toFloat()
+        } else{
+            textView6.textSize=textSizeArray[6].toFloat()
+        }
+        if (textColorArray[0]== CONSTANT){
+            textView6.setTextColor(Color.parseColor(textColorArray[1]))
+        }else{
+            textView6.setTextColor(Color.parseColor(textColorArray[6]))
+        }
         textView6.id = View.generateViewId()
         textView6.typeface = ResourcesCompat.getFont(contex, fontAddress)
         textView6.background=shape
@@ -93,8 +151,17 @@ class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
 
         val textView7 = TextView(contex)
         textView7.text = strings[6]
-        textView7.textSize = textSize
+        if (textSizeArray[0]==0){
+            textView7.textSize=textSizeArray[1].toFloat()
+        } else{
+            textView7.textSize=textSizeArray[7].toFloat()
+        }
         textView7.id = View.generateViewId()
+        if (textColorArray[0]== CONSTANT){
+            textView7.setTextColor(Color.parseColor(textColorArray[1]))
+        }else{
+            textView7.setTextColor(Color.parseColor(textColorArray[7]))
+        }
         textView7.typeface = ResourcesCompat.getFont(contex, fontAddress)
         textView7.background=shape
         textView7.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
@@ -102,7 +169,16 @@ class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
 
         val textView8 = TextView(contex)
         textView8.text = strings[7]
-        textView8.textSize = textSize
+        if (textSizeArray[0]==0){
+            textView8.textSize=textSizeArray[1].toFloat()
+        } else{
+            textView8.textSize=textSizeArray[8].toFloat()
+        }
+        if (textColorArray[0]== CONSTANT){
+            textView8.setTextColor(Color.parseColor(textColorArray[1]))
+        }else{
+            textView8.setTextColor(Color.parseColor(textColorArray[8]))
+        }
         textView8.id = View.generateViewId()
         textView8.typeface = ResourcesCompat.getFont(contex, fontAddress)
         textView8.background=shape
@@ -111,7 +187,16 @@ class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
 
         val textView9 = TextView(contex)
         textView9.text = strings[8]
-        textView9.textSize = textSize
+        if (textSizeArray[0]==0){
+            textView9.textSize=textSizeArray[1].toFloat()
+        } else{
+            textView9.textSize=textSizeArray[9].toFloat()
+        }
+        if (textColorArray[0]== CONSTANT){
+            textView9.setTextColor(Color.parseColor(textColorArray[1]))
+        }else{
+            textView9.setTextColor(Color.parseColor(textColorArray[9]))
+        }
         textView9.id = View.generateViewId()
         textView9.typeface = ResourcesCompat.getFont(contex, fontAddress)
         textView9.background=shape
@@ -134,10 +219,10 @@ class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
             ConstraintLayout.LayoutParams.WRAP_CONTENT,
             ConstraintLayout.LayoutParams.WRAP_CONTENT
         )
-          val lp5 = ConstraintLayout.LayoutParams(
-              ConstraintLayout.LayoutParams.WRAP_CONTENT,
-              ConstraintLayout.LayoutParams.WRAP_CONTENT
-          )
+        val lp5 = ConstraintLayout.LayoutParams(
+            ConstraintLayout.LayoutParams.WRAP_CONTENT,
+            ConstraintLayout.LayoutParams.WRAP_CONTENT
+        )
         val lp6 = ConstraintLayout.LayoutParams(
             ConstraintLayout.LayoutParams.WRAP_CONTENT,
             ConstraintLayout.LayoutParams.WRAP_CONTENT
@@ -311,38 +396,38 @@ class NineLinePost  (val contex: Context, val layout: ConstraintLayout) {
             )
         }
 
-         if (margin[4][0] > 0) {
-             containSet.connect(
-                 textView5.id,
-                 ConstraintSet.LEFT,
-                 ConstraintSet.PARENT_ID,
-                 ConstraintSet.LEFT, margin[4][0].toPx()
-             )
-         }
-         if (margin[4][1] > 0) {
-             containSet.connect(
-                 textView5.id,
-                 ConstraintSet.TOP,
-                 ConstraintSet.PARENT_ID,
-                 ConstraintSet.TOP, margin[4][1].toPx()
-             )
-         }
-         if (margin[4][2]>0) {
-             containSet.connect(
-                 textView5.id,
-                 ConstraintSet.RIGHT,
-                 ConstraintSet.PARENT_ID,
-                 ConstraintSet.RIGHT, margin[4][2].toPx()
-             )
-         }
-         if (margin[4][3]>0){
-             containSet.connect(
-                 textView5.id,
-                 ConstraintSet.BOTTOM,
-                 ConstraintSet.PARENT_ID,
-                 ConstraintSet.BOTTOM, margin[4][3].toPx()
-             )
-         }
+        if (margin[4][0] > 0) {
+            containSet.connect(
+                textView5.id,
+                ConstraintSet.LEFT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.LEFT, margin[4][0].toPx()
+            )
+        }
+        if (margin[4][1] > 0) {
+            containSet.connect(
+                textView5.id,
+                ConstraintSet.TOP,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.TOP, margin[4][1].toPx()
+            )
+        }
+        if (margin[4][2]>0) {
+            containSet.connect(
+                textView5.id,
+                ConstraintSet.RIGHT,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.RIGHT, margin[4][2].toPx()
+            )
+        }
+        if (margin[4][3]>0){
+            containSet.connect(
+                textView5.id,
+                ConstraintSet.BOTTOM,
+                ConstraintSet.PARENT_ID,
+                ConstraintSet.BOTTOM, margin[4][3].toPx()
+            )
+        }
 
         if (margin[5][0] > 0) {
             containSet.connect(

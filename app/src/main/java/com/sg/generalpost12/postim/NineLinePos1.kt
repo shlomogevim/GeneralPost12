@@ -142,7 +142,6 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
             textView4.gravity = Gravity.CENTER
         }
         if (lineNum > 4) {
-            val textView5 = TextView(contex)
             textView5.text = strings[4]
             if (textSizeArray[0] == 0) {
                 textView5.textSize = textSizeArray[1].toFloat()

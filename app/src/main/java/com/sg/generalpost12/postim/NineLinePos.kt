@@ -14,7 +14,7 @@ import androidx.core.content.res.ResourcesCompat
 import com.sg.generalpost12.data.CONSTANT
 import com.sg.generalpost12.data.Helper
 
-class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
+class NineLinePost(val contex: Context, val layout: ConstraintLayout) {
 
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
     val helper = Helper()
@@ -27,7 +27,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
     val textView3 = TextView(contex)
     val textView2 = TextView(contex)
 
-    fun createPost91(
+    fun createPost(
         lineNum: Int,
         backGround: String,
         tran: Int = 0,
@@ -353,7 +353,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
         val containSet = ConstraintSet()
         containSet.clone(layout)
 
-        if (margin[0][0] > 0) {
+        if (margin[0][0] > -1) {
             containSet.connect(
                 textView1.id,
                 ConstraintSet.LEFT,
@@ -361,7 +361,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                 ConstraintSet.LEFT, margin[0][0].toPx()
             )
         }
-        if (margin[0][1] > 0) {
+        if (margin[0][1] > -1) {
             containSet.connect(
                 textView1.id,
                 ConstraintSet.TOP,
@@ -369,7 +369,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                 ConstraintSet.TOP, margin[0][1].toPx()
             )
         }
-        if (margin[0][2] > 0) {
+        if (margin[0][2] > -1) {
             containSet.connect(
                 textView1.id,
                 ConstraintSet.RIGHT,
@@ -377,7 +377,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                 ConstraintSet.RIGHT, margin[0][2].toPx()
             )
         }
-        if (margin[0][3] > 0) {
+       if (margin[0][3] > -1) {
             containSet.connect(
                 textView1.id,
                 ConstraintSet.BOTTOM,
@@ -387,7 +387,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
         }
 
         if (lineNum>1) {
-            if (margin[1][0] > 0) {
+            if (margin[1][0] > -1) {
                 containSet.connect(
                     textView2.id,
                     ConstraintSet.LEFT,
@@ -395,7 +395,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.LEFT, margin[1][0].toPx()
                 )
             }
-            if (margin[1][1] > 0) {
+            if (margin[1][1] > -1) {
                 containSet.connect(
                     textView2.id,
                     ConstraintSet.TOP,
@@ -403,7 +403,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.TOP, margin[1][1].toPx()
                 )
             }
-            if (margin[1][2] > 0) {
+            if (margin[1][2] > -1) {
                 containSet.connect(
                     textView2.id,
                     ConstraintSet.RIGHT,
@@ -411,7 +411,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.RIGHT, margin[1][2].toPx()
                 )
             }
-            if (margin[1][3] > 0) {
+            if (margin[1][3] >-1) {
                 containSet.connect(
                     textView2.id,
                     ConstraintSet.BOTTOM,
@@ -421,7 +421,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
             }
         }
         if (lineNum > 2) {
-            if (margin[2][0] > 0) {
+            if (margin[2][0] > -1) {
                 containSet.connect(
                     textView3.id,
                     ConstraintSet.LEFT,
@@ -429,7 +429,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.LEFT, margin[2][0].toPx()
                 )
             }
-            if (margin[2][1] > 0) {
+            if (margin[2][1] > -1) {
                 containSet.connect(
                     textView3.id,
                     ConstraintSet.TOP,
@@ -437,15 +437,15 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.TOP, margin[2][1].toPx()
                 )
             }
-            if (margin[2][2] > 0) {
+            if (margin[2][2] > -1) {
                 containSet.connect(
                     textView3.id,
                     ConstraintSet.RIGHT,
                     ConstraintSet.PARENT_ID,
                     ConstraintSet.RIGHT, margin[2][2].toPx()
                 )
-            }
-            if (margin[2][3] > 0) {
+           }
+           if (margin[2][3] > -1) {
                 containSet.connect(
                     textView3.id,
                     ConstraintSet.BOTTOM,
@@ -456,15 +456,15 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
         }
 
         if (lineNum > 3) {
-            if (margin[3][0] > 0) {
+            if (margin[3][0] > -1) {
                 containSet.connect(
                     textView4.id,
                     ConstraintSet.LEFT,
                     ConstraintSet.PARENT_ID,
                     ConstraintSet.LEFT, margin[3][0].toPx()
-                )
+               )
             }
-            if (margin[3][1] > 0) {
+            if (margin[3][1] > -1) {
                 containSet.connect(
                     textView4.id,
                     ConstraintSet.TOP,
@@ -472,7 +472,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.TOP, margin[3][1].toPx()
                 )
             }
-            if (margin[3][2] > 0) {
+            if (margin[3][2] > -1) {
                 containSet.connect(
                     textView4.id,
                     ConstraintSet.RIGHT,
@@ -480,7 +480,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.RIGHT, margin[3][2].toPx()
                 )
             }
-            if (margin[3][3] > 0) {
+            if (margin[3][3] > -1) {
                 containSet.connect(
                     textView4.id,
                     ConstraintSet.BOTTOM,
@@ -490,7 +490,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
             }
         }
         if (lineNum > 4) {
-            if (margin[4][0] > 0) {
+            if (margin[4][0] > -1) {
                 containSet.connect(
                     textView5.id,
                     ConstraintSet.LEFT,
@@ -498,7 +498,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.LEFT, margin[4][0].toPx()
                 )
             }
-            if (margin[4][1] > 0) {
+            if (margin[4][1] > -1) {
                 containSet.connect(
                     textView5.id,
                     ConstraintSet.TOP,
@@ -506,7 +506,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.TOP, margin[4][1].toPx()
                 )
             }
-            if (margin[4][2] > 0) {
+            if (margin[4][2] > -1) {
                 containSet.connect(
                     textView5.id,
                     ConstraintSet.RIGHT,
@@ -514,7 +514,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.RIGHT, margin[4][2].toPx()
                 )
             }
-            if (margin[4][3] > 0) {
+            if (margin[4][3] > -1) {
                 containSet.connect(
                     textView5.id,
                     ConstraintSet.BOTTOM,
@@ -524,7 +524,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
             }
         }
         if (lineNum > 5) {
-            if (margin[5][0] > 0) {
+            if (margin[5][0] > -1) {
                 containSet.connect(
                     textView6.id,
                     ConstraintSet.LEFT,
@@ -532,7 +532,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.LEFT, margin[5][0].toPx()
                 )
             }
-            if (margin[5][1] > 0) {
+            if (margin[5][1] > -1) {
                 containSet.connect(
                     textView6.id,
                     ConstraintSet.TOP,
@@ -540,7 +540,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.TOP, margin[5][1].toPx()
                 )
             }
-            if (margin[5][2] > 0) {
+            if (margin[5][2] > -1) {
                 containSet.connect(
                     textView6.id,
                     ConstraintSet.RIGHT,
@@ -548,7 +548,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.RIGHT, margin[5][2].toPx()
                 )
             }
-            if (margin[5][3] > 0) {
+            if (margin[5][3] > -1) {
                 containSet.connect(
                     textView6.id,
                     ConstraintSet.BOTTOM,
@@ -558,7 +558,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
             }
         }
         if (lineNum > 6) {
-            if (margin[6][0] > 0) {
+            if (margin[6][0] > -1) {
                 containSet.connect(
                     textView7.id,
                     ConstraintSet.LEFT,
@@ -566,7 +566,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.LEFT, margin[6][0].toPx()
                 )
             }
-            if (margin[6][1] > 0) {
+            if (margin[6][1] > -1) {
                 containSet.connect(
                     textView7.id,
                     ConstraintSet.TOP,
@@ -574,7 +574,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.TOP, margin[6][1].toPx()
                 )
             }
-            if (margin[6][2] > 0) {
+            if (margin[6][2] > -1) {
                 containSet.connect(
                     textView7.id,
                     ConstraintSet.RIGHT,
@@ -582,7 +582,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.RIGHT, margin[6][2].toPx()
                 )
             }
-            if (margin[6][3] > 0) {
+            if (margin[6][3] > -1) {
                 containSet.connect(
                     textView7.id,
                     ConstraintSet.BOTTOM,
@@ -592,7 +592,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
             }
         }
         if (lineNum > 7) {
-            if (margin[7][0] > 0) {
+            if (margin[7][0] > -1) {
                 containSet.connect(
                     textView8.id,
                     ConstraintSet.LEFT,
@@ -600,7 +600,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.LEFT, margin[7][0].toPx()
                 )
             }
-            if (margin[7][1] > 0) {
+            if (margin[7][1] > -1) {
                 containSet.connect(
                     textView8.id,
                     ConstraintSet.TOP,
@@ -608,7 +608,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.TOP, margin[7][1].toPx()
                 )
             }
-            if (margin[7][2] > 0) {
+            if (margin[7][2] > -1) {
                 containSet.connect(
                     textView8.id,
                     ConstraintSet.RIGHT,
@@ -616,7 +616,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.RIGHT, margin[7][2].toPx()
                 )
             }
-            if (margin[7][3] > 0) {
+            if (margin[7][3] > -1) {
                 containSet.connect(
                     textView8.id,
                     ConstraintSet.BOTTOM,
@@ -626,7 +626,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
             }
         }
         if (lineNum > 8) {
-            if (margin[8][0] > 0) {
+            if (margin[8][0] > -1) {
                 containSet.connect(
                     textView9.id,
                     ConstraintSet.LEFT,
@@ -634,7 +634,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.LEFT, margin[8][0].toPx()
                 )
             }
-            if (margin[8][1] > 0) {
+            if (margin[8][1] > -1) {
                 containSet.connect(
                     textView9.id,
                     ConstraintSet.TOP,
@@ -642,7 +642,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.TOP, margin[8][1].toPx()
                 )
             }
-            if (margin[8][2] > 0) {
+            if (margin[8][2] > -1) {
                 containSet.connect(
                     textView9.id,
                     ConstraintSet.RIGHT,
@@ -650,7 +650,7 @@ class NineLinePost1(val contex: Context, val layout: ConstraintLayout) {
                     ConstraintSet.RIGHT, margin[8][2].toPx()
                 )
             }
-            if (margin[8][3] > 0) {
+            if (margin[8][3] > -1) {
                 containSet.connect(
                     textView9.id,
                     ConstraintSet.BOTTOM,

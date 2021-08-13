@@ -1,4 +1,4 @@
-package com.sg.generalpost12.postim
+package com.sg.generalpost12.postim.old
 
 import android.content.Context
 import android.content.res.Resources
@@ -11,14 +11,12 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.res.ResourcesCompat
 import com.sg.generalpost12.data.Helper
 
-class SixLinePost1 (val contex: Context, val layout: ConstraintLayout) {
+class FiveLinesPost (val contex: Context, val layout: ConstraintLayout) {
 
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
-    val helper= Helper()
+    val helper = Helper()
 
-
-
-    fun createPost6(
+    fun createPost5(
         backGround: String,
         tran: Int=0,
         strings: Array<String>,
@@ -76,14 +74,23 @@ class SixLinePost1 (val contex: Context, val layout: ConstraintLayout) {
         textView5.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
         textView5.gravity = Gravity.CENTER
 
-        val textView6 = TextView(contex)
-        textView6.text = strings[5]
-        textView6.textSize = textSize
-        textView6.id = View.generateViewId()
-        textView6.typeface = ResourcesCompat.getFont(contex, fontAddress)
-        textView6.setBackgroundColor(Color.parseColor("#$tra$backGround"))
-        textView6.setPadding(padding[0].toPx(), padding[1].toPx(), padding[2].toPx(), padding[3].toPx())
-        textView6.gravity = Gravity.CENTER
+       /* val textView4 = TextView(contex)
+        textView4.text = strings[3]
+        if (index==1){
+            textView4.textSize = 20f
+        }else {
+            textView4.textSize = textSize
+        }
+        textView4.id = View.generateViewId()
+
+        val textView5 = TextView(contex)
+        textView5.text = strings[4]
+        if (index==1){
+            textView5.textSize = 24f
+        }else {
+            textView5.textSize = textSize
+        }
+        textView5.id = View.generateViewId()*/
 
 
         val lp1 = ConstraintLayout.LayoutParams(
@@ -106,24 +113,18 @@ class SixLinePost1 (val contex: Context, val layout: ConstraintLayout) {
             ConstraintLayout.LayoutParams.WRAP_CONTENT,
             ConstraintLayout.LayoutParams.WRAP_CONTENT
         )
-        val lp6 = ConstraintLayout.LayoutParams(
-            ConstraintLayout.LayoutParams.WRAP_CONTENT,
-            ConstraintLayout.LayoutParams.WRAP_CONTENT
-        )
 
         textView1.layoutParams = lp1
         textView2.layoutParams = lp2
         textView3.layoutParams = lp3
         textView4.layoutParams = lp4
         textView5.layoutParams = lp5
-        textView6.layoutParams = lp6
 
         layout.addView(textView1)
         layout.addView(textView2)
         layout.addView(textView3)
         layout.addView(textView4)
         layout.addView(textView5)
-        layout.addView(textView6)
 
         val containSet = ConstraintSet()
         containSet.clone(layout)
@@ -294,38 +295,6 @@ class SixLinePost1 (val contex: Context, val layout: ConstraintLayout) {
                 ConstraintSet.BOTTOM,
                 ConstraintSet.PARENT_ID,
                 ConstraintSet.BOTTOM, margin[4][3].toPx()
-            )
-        }
-        if (margin[5][0] > 0) {
-            containSet.connect(
-                textView6.id,
-                ConstraintSet.LEFT,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.LEFT, margin[5][0].toPx()
-            )
-        }
-        if (margin[5][1] > 0) {
-            containSet.connect(
-                textView6.id,
-                ConstraintSet.TOP,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.TOP, margin[5][1].toPx()
-            )
-        }
-        if (margin[5][2]>0) {
-            containSet.connect(
-                textView6.id,
-                ConstraintSet.RIGHT,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.RIGHT, margin[5][2].toPx()
-            )
-        }
-        if (margin[5][3]>0){
-            containSet.connect(
-                textView6.id,
-                ConstraintSet.BOTTOM,
-                ConstraintSet.PARENT_ID,
-                ConstraintSet.BOTTOM, margin[5][3].toPx()
             )
         }
 

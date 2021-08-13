@@ -4,8 +4,8 @@ import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import coil.load
-import com.sg.generalpost12.data.CONSTANT
 import com.sg.generalpost12.postim.*
+import com.sg.generalpost12.postim.old.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,8 +15,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var fourLinesPost: FourLinePost
     lateinit var fiveLinesPost: FiveLinesPost
     lateinit var sixLinesPost: SixLinePost
-    lateinit var nineLinesPost: NineLinePost
+
+    //  lateinit var nineLinesPost: NineLinePost
     lateinit var nineLinesPost1: NineLinePost1
+
 
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
@@ -30,11 +32,12 @@ class MainActivity : AppCompatActivity() {
         fourLinesPost = FourLinePost(this, mainLayout)
         fiveLinesPost = FiveLinesPost(this, mainLayout)
         sixLinesPost = SixLinePost(this, mainLayout)
-        nineLinesPost = NineLinePost(this, mainLayout)
+        // nineLinesPost = NineLinePost(this, mainLayout)
         nineLinesPost1 = NineLinePost1(this, mainLayout)
 
 
         //  post10()
+
 
         //  post20()
         //  post21()
@@ -48,23 +51,33 @@ class MainActivity : AppCompatActivity() {
 
         //  post60()
         // post90()
-        post90a()
+
+        //  post90a()
+        // post80a()
+        // post70a()
+        //   post60a()
+        //  post50a()
+        // post40a()
+        // post30a()
+        // post20a()
+        post10a()
 
 
     }
 
-    private fun post10() {
-        imageView.load(R.drawable.talking)
-        val strings = arrayOf(
-            "כל אחד מדבר את מה שהוא."
-        )
-        val margin = arrayOf(
-            arrayOf(0, 0, 15, 1)
-        )
-        val padding = arrayOf(10, 0, 10, 0)
 
-        oneLine.createPost1("263238", 3, strings, margin, padding, 23f)
-    }
+    /* private fun post10() {
+         imageView.load(R.drawable.talking)
+         val strings = arrayOf(
+             "כל אחד מדבר את מה שהוא."
+         )
+         val margin = arrayOf(
+             arrayOf(0, 0, 15, 1)
+         )
+         val padding = arrayOf(10, 0, 10, 0)
+
+         oneLine.createPost1("263238", 3, strings, margin, padding, 23f)
+     }*/
 
     private fun post20() {
         imageView.load(R.drawable.sad)
@@ -201,10 +214,263 @@ class MainActivity : AppCompatActivity() {
         sixLinesPost.createPost6("263238", 7, strings, margin, padding, 24f)
     }
 
-    private fun post90() {
+    /* private fun post90() {
+         imageView.load(R.drawable.night)
+         val strings = arrayOf(
+             "זה שהסתדרת עם השנים זה לא אומר שאתה מסודר,",
+             "זה שאתה עסוק כל הזמן זה לא אומר שאתה עושה משהו,",
+             "זה שאתה אוכל כל הזמן זה לא אומר שאתה שבע,",
+             "זה שיש לך הכל זה לא אומר שאתה לא רוצה עוד,",
+             "זה שאתה נח כל היום זה לא אומר שאתה לא עייף,",
+             "זה שיש לך חברים זה לא אומר שאתה לא בודד,",
+             "זה שהחכמת עם השנים זה לא אומר שאתה חכם,",
+             "זה שאתה לא עושה שום דבר זה לא אומר שיש לך זמן,",
+             "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
+
+         )
+         val margin = arrayOf(
+             arrayOf(0, 0, 2, 0),
+             arrayOf(0, 70, 2, 0),
+             arrayOf(0, 140, 2, 0),
+             arrayOf(0, 210, 2, 0),
+             arrayOf(0, 280, 2, 0),
+             arrayOf(0, 350, 2, 0),
+             arrayOf(0, 420, 2, 0),
+             arrayOf(0, 490, 2, 0),
+             arrayOf(0, 560, 2, 0)
+         )
+         val padding = arrayOf(5, 0, 5, 0)
+
+         nineLinesPost.createPost9(
+             "263238",
+             2,
+             strings,
+             margin,
+             padding,
+             25f,
+             // textColor = "f6ff03",
+             radius = 10,
+             fontFamily = 0
+         )
+     }*/
+
+
+    private fun post10a() {
         imageView.load(R.drawable.night)
-        val strings = arrayOf(
-            "זה שהסתדרת עם השנים זה לא אומר שאתה מסודר,",
+        val lineNum = 1
+        val backGround = "263238"
+        val tranparency = 2
+        val lineA = arrayOf(
+            "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
+        )
+        val marginA = arrayOf(
+            arrayOf(0, 560, 2, 0)
+        )
+        val paddingA = arrayOf(5, 0, 5, 0)
+        // val textSizeA = arrayOf(0, 25)
+        val textSizeA = arrayOf(1, 25)
+        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
+        val col = "#f6ff03"
+        val col1 = "#1de9b6"
+        val textColorA = arrayOf("toto", col1)
+
+        nineLinesPost1.createPost91(
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+        )
+    }
+
+    private fun post20a() {
+        imageView.load(R.drawable.night)
+        val lineNum = 2
+        val backGround = "263238"
+        val tranparency = 2
+        val lineA = arrayOf(
+            "זה שאתה לא עושה שום דבר זה לא אומר שיש לך זמן,",
+            "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
+        )
+        val marginA = arrayOf(
+            arrayOf(0, 490, 2, 0),
+            arrayOf(0, 560, 2, 0)
+        )
+        val paddingA = arrayOf(5, 0, 5, 0)
+        // val textSizeA = arrayOf(0, 25)
+        val textSizeA = arrayOf(1, 25, 16)
+        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
+        val col = "#f6ff03"
+        val col1 = "#1de9b6"
+        val textColorA = arrayOf("toto", col, col1)
+
+        nineLinesPost1.createPost91(
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+        )
+    }
+
+    private fun post30a() {
+        imageView.load(R.drawable.night)
+        val lineNum = 3
+        val backGround = "263238"
+        val tranparency = 2
+        val lineA = arrayOf(
+            "זה שהחכמת עם השנים זה לא אומר שאתה חכם,",
+            "זה שאתה לא עושה שום דבר זה לא אומר שיש לך זמן,",
+            "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
+        )
+        val marginA = arrayOf(
+            arrayOf(0, 420, 2, 0),
+            arrayOf(0, 490, 2, 0),
+            arrayOf(0, 560, 2, 0)
+        )
+        val paddingA = arrayOf(5, 0, 5, 0)
+        // val textSizeA = arrayOf(0, 25)
+        val textSizeA = arrayOf(1, 25, 16, 25)
+        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
+        val col = "#f6ff03"
+        val col1 = "#1de9b6"
+        val textColorA = arrayOf("toto", col, col, col1)
+
+        nineLinesPost1.createPost91(
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+        )
+    }
+
+    private fun post40a() {
+        imageView.load(R.drawable.night)
+        val lineNum = 4
+        val backGround = "263238"
+        val tranparency = 2
+        val lineA = arrayOf(
+            "זה שיש לך חברים זה לא אומר שאתה לא בודד,",
+            "זה שהחכמת עם השנים זה לא אומר שאתה חכם,",
+            "זה שאתה לא עושה שום דבר זה לא אומר שיש לך זמן,",
+            "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
+        )
+        val marginA = arrayOf(
+            arrayOf(0, 350, 2, 0),
+            arrayOf(0, 420, 2, 0),
+            arrayOf(0, 490, 2, 0),
+            arrayOf(0, 560, 2, 0)
+        )
+        val paddingA = arrayOf(5, 0, 5, 0)
+        // val textSizeA = arrayOf(0, 25)
+        val textSizeA = arrayOf(1, 25, 16, 25, 25)
+        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
+        val col = "#f6ff03"
+        val col1 = "#1de9b6"
+        val textColorA = arrayOf("toto", col, col, col, col1)
+
+        nineLinesPost1.createPost91(
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+        )
+    }
+
+    private fun post50a() {
+        imageView.load(R.drawable.night)
+        val lineNum = 5
+        val backGround = "263238"
+        val tranparency = 2
+        val lineA = arrayOf(
+            "זה שאתה נח כל היום זה לא אומר שאתה לא עייף,",
+            "זה שיש לך חברים זה לא אומר שאתה לא בודד,",
+            "זה שהחכמת עם השנים זה לא אומר שאתה חכם,",
+            "זה שאתה לא עושה שום דבר זה לא אומר שיש לך זמן,",
+            "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
+        )
+        val marginA = arrayOf(
+            arrayOf(0, 280, 2, 0),
+            arrayOf(0, 350, 2, 0),
+            arrayOf(0, 420, 2, 0),
+            arrayOf(0, 490, 2, 0),
+            arrayOf(0, 560, 2, 0)
+        )
+        val paddingA = arrayOf(5, 0, 5, 0)
+        // val textSizeA = arrayOf(0, 25)
+        val textSizeA = arrayOf(1, 25, 16, 25, 25, 25)
+        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
+        val col = "#f6ff03"
+        val col1 = "#1de9b6"
+        val textColorA = arrayOf("toto", col, col, col, col, col1)
+
+        nineLinesPost1.createPost91(
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+        )
+    }
+
+    private fun post60a() {
+        imageView.load(R.drawable.night)
+        val lineNum = 6
+        val backGround = "263238"
+        val tranparency = 2
+        val lineA = arrayOf(
+            "זה שיש לך הכל זה לא אומר שאתה לא רוצה עוד,",
+            "זה שאתה נח כל היום זה לא אומר שאתה לא עייף,",
+            "זה שיש לך חברים זה לא אומר שאתה לא בודד,",
+            "זה שהחכמת עם השנים זה לא אומר שאתה חכם,",
+            "זה שאתה לא עושה שום דבר זה לא אומר שיש לך זמן,",
+            "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
+        )
+        val marginA = arrayOf(
+            arrayOf(0, 210, 2, 0),
+            arrayOf(0, 280, 2, 0),
+            arrayOf(0, 350, 2, 0),
+            arrayOf(0, 420, 2, 0),
+            arrayOf(0, 490, 2, 0),
+            arrayOf(0, 560, 2, 0)
+        )
+        val paddingA = arrayOf(5, 0, 5, 0)
+        // val textSizeA = arrayOf(0, 25)
+        val textSizeA = arrayOf(1, 25, 16, 25, 25, 25, 16)
+        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
+        val col = "#f6ff03"
+        val col1 = "#1de9b6"
+        val textColorA = arrayOf("toto", col, col, col, col, col, col1)
+
+        nineLinesPost1.createPost91(
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+        )
+    }
+
+    private fun post70a() {
+        imageView.load(R.drawable.night)
+        val lineNum = 7
+        val backGround = "263238"
+        val tranparency = 2
+        val lineA = arrayOf(
+            "זה שאתה אוכל כל הזמן זה לא אומר שאתה שבע,",
+            "זה שיש לך הכל זה לא אומר שאתה לא רוצה עוד,",
+            "זה שאתה נח כל היום זה לא אומר שאתה לא עייף,",
+            "זה שיש לך חברים זה לא אומר שאתה לא בודד,",
+            "זה שהחכמת עם השנים זה לא אומר שאתה חכם,",
+            "זה שאתה לא עושה שום דבר זה לא אומר שיש לך זמן,",
+            "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
+        )
+        val marginA = arrayOf(
+            arrayOf(0, 140, 2, 0),
+            arrayOf(0, 210, 2, 0),
+            arrayOf(0, 280, 2, 0),
+            arrayOf(0, 350, 2, 0),
+            arrayOf(0, 420, 2, 0),
+            arrayOf(0, 490, 2, 0),
+            arrayOf(0, 560, 2, 0)
+        )
+        val paddingA = arrayOf(5, 0, 5, 0)
+        // val textSizeA = arrayOf(0, 25)
+        val textSizeA = arrayOf(1, 25, 16, 25, 25, 25, 16, 25)
+        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
+        val col = "#f6ff03"
+        val col1 = "#1de9b6"
+        val textColorA = arrayOf("toto", col, col, col, col, col, col, col1)
+
+        nineLinesPost1.createPost91(
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+        )
+    }
+
+    private fun post80a() {
+        imageView.load(R.drawable.night)
+        val lineNum = 8
+        val backGround = "263238"
+        val tranparency = 2
+        val lineA = arrayOf(
             "זה שאתה עסוק כל הזמן זה לא אומר שאתה עושה משהו,",
             "זה שאתה אוכל כל הזמן זה לא אומר שאתה שבע,",
             "זה שיש לך הכל זה לא אומר שאתה לא רוצה עוד,",
@@ -213,10 +479,8 @@ class MainActivity : AppCompatActivity() {
             "זה שהחכמת עם השנים זה לא אומר שאתה חכם,",
             "זה שאתה לא עושה שום דבר זה לא אומר שיש לך זמן,",
             "זה שיש בך את האלוהי זה לא אומר שאתה אלוהים."
-
         )
-        val margin = arrayOf(
-            arrayOf(0, 0, 2, 0),
+        val marginA = arrayOf(
             arrayOf(0, 70, 2, 0),
             arrayOf(0, 140, 2, 0),
             arrayOf(0, 210, 2, 0),
@@ -226,26 +490,25 @@ class MainActivity : AppCompatActivity() {
             arrayOf(0, 490, 2, 0),
             arrayOf(0, 560, 2, 0)
         )
-        val padding = arrayOf(5, 0, 5, 0)
+        val paddingA = arrayOf(5, 0, 5, 0)
+        // val textSizeA = arrayOf(0, 25)
+        val textSizeA = arrayOf(1, 25, 16, 25, 25, 25, 16, 25, 25)
+        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
+        val col = "#f6ff03"
+        val col1 = "#1de9b6"
+        val textColorA = arrayOf("toto", col, col, col, col, col, col, col, col1)
 
-        nineLinesPost.createPost9(
-            "263238",
-            2,
-            strings,
-            margin,
-            padding,
-            25f,
-            // textColor = "f6ff03",
-            radius = 10,
-            fontFamily = 0
+        nineLinesPost1.createPost91(
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
         )
     }
 
     private fun post90a() {
         imageView.load(R.drawable.night)
+        val lineNum = 9
         val backGround = "263238"
         val tranparency = 2
-        val lineA = arrayOf(
+        val stringA = arrayOf(
             "זה שהסתדרת עם השנים זה לא אומר שאתה מסודר,",
             "זה שאתה עסוק כל הזמן זה לא אומר שאתה עושה משהו,",
             "זה שאתה אוכל כל הזמן זה לא אומר שאתה שבע,",
@@ -268,15 +531,15 @@ class MainActivity : AppCompatActivity() {
             arrayOf(0, 560, 2, 0)
         )
         val paddingA = arrayOf(5, 0, 5, 0)
-       // val textSizeA = arrayOf(0, 25)
-        val textSizeA = arrayOf(1, 25,16,25,25,25,16,25,25,25)
+        // val textSizeA = arrayOf(0, 25)
+        val textSizeA = arrayOf(1, 25, 16, 25, 25, 25, 16, 25, 25, 25)
         //val textColorA = arrayOf(CONSTANT, "#f6ff03")
-        val col="#f6ff03"
-        val col1="#1de9b6"
-        val textColorA = arrayOf("toto", col, col,col, col, col, col, col, col, col1)
+        val col = "#f6ff03"
+        val col1 = "#1de9b6"
+        val textColorA = arrayOf("toto", col, col, col, col, col, col, col, col, col1)
 
         nineLinesPost1.createPost91(
-            backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+            lineNum, backGround, tranparency, stringA, marginA, paddingA, textSizeA, textColorA
         )
     }
 

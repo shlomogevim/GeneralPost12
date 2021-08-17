@@ -30,6 +30,8 @@ class Helper {
             6->R.font.stamsefaradclmwebfont
             7->R.font.varelaround_regular
             8->R.font.yiddishkeitalefalefalef_bold
+            9->R.font.drugulinclm_bold
+            10->R.font.drugulinclm_bolditalic
 
             else->R.font.davidlibre_regular
         }

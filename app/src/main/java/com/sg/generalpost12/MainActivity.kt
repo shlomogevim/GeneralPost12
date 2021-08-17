@@ -5,27 +5,52 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import coil.load
 import com.sg.generalpost12.data.CONSTANT
-import com.sg.generalpost12.general.Post3Line
+import com.sg.generalpost12.general.*
 import com.sg.generalpost12.postim.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var nineLinesPost: NineLinePost
-    lateinit var post3Line: Post3Line
+    lateinit var post1Line: Post1Line
+    lateinit var post2Line: Post2Lines
+    lateinit var post3Line: Post3Lines
+    lateinit var post4Lines:Post4Lines
+    lateinit var post5Lines:Post5Lines
 
 
 
-    fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         nineLinesPost = NineLinePost(this, mainLayout)
-        post3Line=Post3Line(this)
+
+        post1Line= Post1Line(this)
+        post2Line=Post2Lines(this)
+        post3Line=Post3Lines(this)
+        post4Lines= Post4Lines(this)
+        post5Lines= Post5Lines(this)
 
 
-        post3Line.post35()
+
+      //  post1Line.post12()
+
+        //  post2Line.post25()+
+
+       //post3Line.post35()
+      // post3Line.post36()+
+      // post3Line.post37()
+
+        //post4Lines.post46()
+       // post4Lines.post47()
+
+        //post5Lines.post53()
+        post5Lines.post54()
+
+
+
+
 
 
 
@@ -40,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         //  post21()
          //post22()
          //post23()
-        //post24()
+       // post24()
 
         //  post30()
          // post31()
@@ -53,7 +78,7 @@ class MainActivity : AppCompatActivity() {
        // post42()
        // post43()
        // post44()
-      //  post45()
+      // post45()+
 
         //   post50()
         //   post51()
@@ -81,6 +106,8 @@ class MainActivity : AppCompatActivity() {
         // post20a()
         // post10a()
     }
+
+    fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
     private fun post10() {
         imageView.load(R.drawable.talking)
@@ -233,13 +260,13 @@ class MainActivity : AppCompatActivity() {
         imageView.load(R.drawable.fight)
         val lineNum = 2
         val backGround = "004d40"
-        val tranparency = 2
+        val tranparency = 4
         val lineA = arrayOf(
             "אם אתה לא יכול להטיב עם המצב",
             "אז על תתערב."
         )
         val marginA = arrayOf(
-            arrayOf(0, -1, 0, 48),
+            arrayOf(0, -1, 0, 40),
             arrayOf(0, -1, 0, 0)
         )
         val paddingA = arrayOf(10, 0, 10, 0)
@@ -249,7 +276,7 @@ class MainActivity : AppCompatActivity() {
         val textColorA = arrayOf(CONSTANT, col)
         nineLinesPost.createPost(
             lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA,
-            radius = 15,fontFamily = 31
+            radius = 15,fontFamily = 1
         )
     }
 

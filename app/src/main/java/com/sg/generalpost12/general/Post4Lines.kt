@@ -327,9 +327,8 @@ class Post4Lines (val context: Context) {
     }
     fun post451() {
         image.load(R.drawable.mud)
-        val backGround = "558b2f"
-        //val transparency = 10
-        val transparency = 3
+        val backGround = "736419"
+        val transparency = 7
         val lineA = arrayOf(
             "את האיזורים הרדודים בעולם",
             "אתה לא יכול להאשים ברדידות,",
@@ -338,15 +337,16 @@ class Post4Lines (val context: Context) {
         )
 
         val marginA = arrayOf(
+            arrayOf(0, 0, 0, -1),
             arrayOf(0, 60, 0, -1),
             arrayOf(0, 120, 0, -1),
-            arrayOf(0, 180, 0, -1),
-            arrayOf(0, 240, 0, -1)
+            arrayOf(0, 180, 0, -1)
         )
         val paddingA = arrayOf(0, 0, 0, 0)
         val textSizeA = arrayOf(0, 22)
        // val col = "#e3e46d"
-        val col = "#ffff00"
+       // val col = "#ffff00"
+        val col = "#2bf02c"
         val textColorA = arrayOf(CONSTANT, col)
 
         nineLinesPost.createPost(

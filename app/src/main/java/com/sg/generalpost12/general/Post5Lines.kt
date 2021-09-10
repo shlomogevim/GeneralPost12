@@ -227,4 +227,32 @@ class Post5Lines (val context: Context) {
             radius = 25,fontFamily = 4
         )
     }
+    fun post57() {
+        image.load("https://cdn.pixabay.com/photo/2019/09/23/09/27/pomegranate-4498054_1280.jpg")
+        val backGround = "143d59"
+        val transparency = 0
+        val lineA = arrayOf(
+            "היחיד שיכול ליצור בשבילך",
+            " שנה טובה ",
+            " הוא אתה ",
+            " כי אתה הוא היוצר היחידי ",
+            "של הטוב והרע בעולמך."
+        )
+        val marginA = arrayOf(
+            arrayOf(0, 0, 0, -1),
+            arrayOf(0, 40, 0, -1),
+            arrayOf(0, 80, 0, -1),
+            arrayOf(0, -1, 0, 40),
+            arrayOf(0, -1, 0, 0)
+        )
+        val paddingA = arrayOf(0, 0, 0, 0)
+        val textSizeA = arrayOf(0, 26)
+        val col = "#ffffff"
+        val textColorA = arrayOf(CONSTANT, col)
+
+        nineLinesPost.createPost(
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 25,fontFamily = 4
+        )
+    }
 }

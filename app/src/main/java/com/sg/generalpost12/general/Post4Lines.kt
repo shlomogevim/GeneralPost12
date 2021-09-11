@@ -409,4 +409,33 @@ class Post4Lines (val context: Context) {
             radius = 10,fontFamily = 4
         )
     }
+    fun post454() {
+        image.load("https://cdn.pixabay.com/photo/2018/09/27/21/51/viewpoint-3707997__340.jpg")
+        val backGround = "558b2f"
+        val transparency = 0
+        val lineA = arrayOf(
+            "  לא השתנת , ",
+            " תמיד היית בנוי מאותם חומרים ",
+            " רק שעם הגיל ",
+            "אתה משתמש בהם קצת אחרת."
+        )
+        val di=0
+
+        val marginA = arrayOf(
+            arrayOf(0, 0+di, 0, -1),
+            arrayOf(0, 45+di, 0, -1),
+            arrayOf(0, 90+di, 0, -1),
+            arrayOf(0, 135+di, 0, -1)
+        )
+        val paddingA = arrayOf(0, 0, 0, 0)
+        val textSizeA = arrayOf(0, 26)
+        val col = "#ffff00"
+        val textColorA = arrayOf(CONSTANT, col)
+
+        nineLinesPost.createPost(
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 10,fontFamily = 109
+                  //  fontFamily = 4
+        )
+    }
 }

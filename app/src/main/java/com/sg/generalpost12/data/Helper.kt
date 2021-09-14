@@ -20,6 +20,7 @@ class Helper {
 
     fun getFamilyFont(index:Int)=
         when (index){
+            // for the old posts
             1-> R.font.a101_ankaclm_bold_webfont
             2->R.font.a210_danayadalefalefalef_normal
             3->R.font.a220_davidlibre_regular
@@ -27,7 +28,7 @@ class Helper {
             32->R.font.a222_davidlibre_medium
             4->R.font.a100_gveretlevinalefalefalef_regular
 
-
+            // for the new post
 
             100->R.font.a100_gveretlevinalefalefalef_regular
             101->R.font.a101_ankaclm_bold_webfont

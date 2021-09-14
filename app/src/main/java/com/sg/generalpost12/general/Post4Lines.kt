@@ -415,27 +415,86 @@ class Post4Lines (val context: Context) {
         val transparency = 0
         val lineA = arrayOf(
             "  לא השתנת , ",
-            " תמיד היית בנוי מאותם חומרים ",
+            "תמיד היית בנוי מאותם חומרים",
             " רק שעם הגיל ",
             "אתה משתמש בהם קצת אחרת."
         )
         val di=0
 
-        val marginA = arrayOf(
+       /* val marginA = arrayOf(
             arrayOf(0, 0+di, 0, -1),
-            arrayOf(0, 45+di, 0, -1),
-            arrayOf(0, 90+di, 0, -1),
-            arrayOf(0, 135+di, 0, -1)
+            arrayOf(0, 30+di, 0, -1),
+            arrayOf(0, 60+di, 0, -1),
+            arrayOf(0, 90+di, 0, -1)
         )
         val paddingA = arrayOf(0, 0, 0, 0)
-        val textSizeA = arrayOf(0, 26)
+        val textSizeA = arrayOf(0, 24)
         val col = "#ffff00"
         val textColorA = arrayOf(CONSTANT, col)
 
         nineLinesPost.createPost(
             lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
-            radius = 10,fontFamily = 109
+            radius = 10,fontFamily = 110
                   //  fontFamily = 4
+        )*/
+        val marginA = arrayOf(
+            arrayOf(0, 0+di, 0, -1),
+            arrayOf(0, 100+di, 0, -1),
+            arrayOf(0, 200+di, 0, -1),
+            arrayOf(0, 300+di, 0, -1)
+        )
+        val paddingA = arrayOf(0, 0, 0, 0)
+        val textSizeA = arrayOf(0, 30)
+        val col = "#ffff00"
+        val textColorA = arrayOf(CONSTANT, col)
+
+        nineLinesPost.createPost(
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 10,fontFamily = 551
+
+        )
+    }
+    fun post455() {
+        image.load("https://cdn.pixabay.com/photo/2018/10/06/08/27/religion-3727463__480.jpg")
+        val backGround = "558b2f"
+        val transparency = 0
+        val lineA = arrayOf(
+            "גבולות העולם שלך די קבועים,",
+            "ככה ",
+            "שכמה שהאלוהות שבך יותר גדולה,",
+            "הבעיות האישיות שלך יותר קטנות."
+        )
+        val di=50
+
+        /* val marginA = arrayOf(
+             arrayOf(0, 0+di, 0, -1),
+             arrayOf(0, 30+di, 0, -1),
+             arrayOf(0, 60+di, 0, -1),
+             arrayOf(0, 90+di, 0, -1)
+         )
+         val paddingA = arrayOf(0, 0, 0, 0)
+         val textSizeA = arrayOf(0, 24)
+         val col = "#ffff00"
+         val textColorA = arrayOf(CONSTANT, col)
+
+         nineLinesPost.createPost(
+             lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+             radius = 10,fontFamily = 110
+                   //  fontFamily = 4
+         )*/
+        val marginA = arrayOf(
+            arrayOf(0, 0+di, 0, -1),
+            arrayOf(0, 40+di, 0, -1),
+            arrayOf(0, 80+di, 0, -1),
+            arrayOf(0, 160+di, 0, -1)
+        )
+        val paddingA = arrayOf(0, 0, 0, 0)
+        val textSizeA = arrayOf(0, 25)
+        val col = "#00819d"
+        val textColorA = arrayOf(CONSTANT, col)
+        nineLinesPost.createPost(
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 10,fontFamily = 570
         )
     }
 }

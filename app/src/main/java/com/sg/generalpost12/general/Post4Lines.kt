@@ -497,4 +497,32 @@ class Post4Lines (val context: Context) {
             radius = 10,fontFamily = 570
         )
     }
+    fun post456() {
+        image.load("https://cdn.pixabay.com/photo/2017/06/07/18/05/spirituality-2381114__480.jpg")
+        val backGround = "558b2f"
+        val transparency = 0
+        val lineA = arrayOf(
+            "להתעצבן בגלל פוליטיקה",
+            "זה מותרות ",
+            "שרק למי שיש חיי נצח",
+            "יכול להרשות לעצמו."
+        )
+        val di=5
+
+        val marginA = arrayOf(
+            arrayOf(0, 0+di, 0, -1),
+            arrayOf(0, 40+di, 0, -1),
+            arrayOf(0, 80+di, 0, -1),
+            arrayOf(0, 120+di, 0, -1)
+        )
+        val paddingA = arrayOf(0, 0, 0, 0)
+        val textSizeA = arrayOf(0, 30)
+       // val col = "#ffffff"
+        val col = "#44ee22"
+        val textColorA = arrayOf(CONSTANT, col)
+        nineLinesPost.createPost(
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 10,fontFamily = 260
+        )
+    }
 }

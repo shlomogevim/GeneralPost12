@@ -533,4 +533,58 @@ class Post3Lines(val context: Context) {
             radius = 15, fontFamily = 4
         )
     }
+    fun post350() {
+        image.load("https://cdn.pixabay.com/photo/2016/04/27/20/38/girl-1357485_1280.jpg")
+        val backGround = "767a77"
+        val transparency = 3
+        val lineA = arrayOf(
+            "אתה לא עושה לאף אחד טובה",
+            "שאתה מבסוט מהחיים,",
+            "פרט לעצמך.",
+        )
+
+
+        val marginA = arrayOf(
+            arrayOf(0, -1, 0, 90),
+            arrayOf(0, -1, 0, 50),
+            arrayOf(0, -1, 0, 10)
+        )
+        val paddingA = arrayOf(5, 0, 5, 0)
+        val textSizeA = arrayOf(0, 30)
+        val col = "#d3d8d4"
+        val textColorA = arrayOf(CONSTANT, col)
+        nineLinesPost.createPost(
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 15,fontFamily = 170
+        )
+    }
+
+
+    fun post351() {
+        image.load("https://cdn.pixabay.com/photo/2021/06/03/00/06/sheet-music-6305620_1280.jpg")
+        val backGround = "428289"
+        val transparency = 0
+        val lineA = arrayOf(
+            "האומנות לחיות",
+            "זה לראות את הקסם",
+            "מאחורי כל הבנאליות הזו.",
+        )
+        val di=10
+        val marginA = arrayOf(
+            arrayOf(0, 0+di, 0, -1),
+            arrayOf(0, 40+di, 0, -1),
+            arrayOf(0, 80+di, 0, -1)
+        )
+        val paddingA = arrayOf(0, 0, 0, 0)
+        val textSizeA = arrayOf(0, 28)
+        val col = "#107896"
+        val textColorA = arrayOf(CONSTANT, col, col)
+
+        nineLinesPost.createPost(
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 15, fontFamily = 380
+        )
+    }
+
+
 }

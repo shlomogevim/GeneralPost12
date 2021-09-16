@@ -15,60 +15,57 @@ class Post2Lines(val context: Context) {
     private val layout: ConstraintLayout = (context as Activity).findViewById(R.id.mainLayout)
     private val nineLinesPost = NineLinePost(context, layout)
     val lineNum = 2
-  fun post20() {
-        image.load(R.drawable.sad)
-        val backGround = "263238"
-        val tranparency = 2
+  fun post200() {
+        image.load("https://cdn.pixabay.com/photo/2014/09/16/01/19/girl-447701_1280.jpg")
+        val backGround = "000000"
+        val tranparency = 6
         val lineA = arrayOf(
             "אין בעיות בעולם",
-            "חוץ מאלה שאצלך בראש"
+            "חוץ מאלה שאצלך בראש."
         )
         val marginA = arrayOf(
-            arrayOf(0, 0, 20, 40),
-            arrayOf(0, 0, 50, 2)
+            arrayOf(0, -1, 0, 37),
+            arrayOf(0, -1, 0, 5)
         )
         val paddingA = arrayOf(10, 0, 10, 0)
 
-        // val textSizeA = arrayOf(0, 25)
-        val textSizeA = arrayOf(0, 26, 16)
-        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
-        val col = "#f6ff03"
-        val col1 = "#1de9b6"
-        val textColorA = arrayOf(CONSTANT, col, col1)
+        val textSizeA = arrayOf(0, 26)
+
+        val col = "#ffffff"
+        val textColorA = arrayOf(CONSTANT, col)
 
         nineLinesPost.createPost(
-            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            fontFamily = 430,radius = 5
         )
     }
 
-    fun post21() {
+    fun post201() {
         image.load(R.drawable.pinocchio)
         val backGround = "263238"
         val tranparency = 2
         val lineA = arrayOf(
             "לאמת פנים רבות",
-            "אחד מהם הוא השקר."
+            "  אחד מהם הוא השקר."
         )
         val marginA = arrayOf(
-            arrayOf(0, 0, 10, 40),
-            arrayOf(0, 0, 2, 2)
+            arrayOf(0, 0, 0, -1),
+            arrayOf(0, 30, 0, -1)
         )
         val paddingA = arrayOf(0, 0, 0, 0)
 
-        // val textSizeA = arrayOf(0, 25)
-        val textSizeA = arrayOf(0, 26, 16)
-        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
-        val col = "#f6ff03"
-        val col1 = "#1de9b6"
-        val textColorA = arrayOf(CONSTANT, col, col1)
+        val textSizeA = arrayOf(0, 26)
+        val col = "#a7aba8"
+        val textColorA = arrayOf(CONSTANT, col)
         nineLinesPost.createPost(
-            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA
+            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            fontFamily = 467
         )
     }
-    fun post222() {
-        image.load(R.drawable.future)
+    fun post202() {
+        image.load("https://cdn.pixabay.com/photo/2019/03/31/07/37/black-hole-4092609_1280.jpg")
         val backGround = "263238"
-        val tranparency = 4
+        val transparency = 0
         val lineA = arrayOf(
             "העתיד הוא ההיסטוריה",
             "רק עם תאריך אחר."
@@ -79,16 +76,15 @@ class Post2Lines(val context: Context) {
         )
         val paddingA = arrayOf(10, 0, 10, 0)
         val textSizeA = arrayOf(0, 29)
-        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
-        val col = "#f6ff03"
+        val col = "#b3b7b4"
         val textColorA = arrayOf(CONSTANT, col)
         nineLinesPost.createPost(
-            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA,
-            radius = 15
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 15,fontFamily = 509
         )
     }
-    fun post23() {
-        image.load(R.drawable.man_in_the_forest)
+    fun post203() {
+        image.load("https://cdn.pixabay.com/photo/2018/02/13/22/02/light-3151723_1280.jpg")
         val backGround = "263238"
         val tranparency = 4
         val lineA = arrayOf(
@@ -99,40 +95,39 @@ class Post2Lines(val context: Context) {
             arrayOf(0, -1, 0, 45),
             arrayOf(0, -1, 0, 10)
         )
-        val paddingA = arrayOf(10, 0, 10, 0)
-        val textSizeA = arrayOf(0, 29)
-        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
+        val paddingA = arrayOf(0, 0, 0, 0)
+        val textSizeA = arrayOf(0, 25)
         val col = "#f6ff03"
         val textColorA = arrayOf(CONSTANT, col)
         nineLinesPost.createPost(
             lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA,
-            radius = 15
+            radius = 15,fontFamily = 551
         )
     }
-    fun post24() {
-        image.load(R.drawable.fight)
+    fun post204() {
+        image.load("https://cdn.pixabay.com/photo/2021/01/09/21/09/antelope-5903514_1280.jpg")
         val backGround = "004d40"
-        val tranparency = 4
+        val transparency = 0
         val lineA = arrayOf(
-            "אם אתה לא יכול להטיב עם המצב",
+            "אם אתה לא יכול להטיב את המצב",
             "אז על תתערב."
         )
+        val di=10
         val marginA = arrayOf(
-            arrayOf(0, -1, 0, 40),
-            arrayOf(0, -1, 0, 0)
+            arrayOf(0, 0+di, 0, -1),
+            arrayOf(0, 72+di, 0, -1)
         )
         val paddingA = arrayOf(10, 0, 10, 0)
         val textSizeA = arrayOf(0, 29)
-        //val textColorA = arrayOf(CONSTANT, "#f6ff03")
         val col = "#ffffff"
         val textColorA = arrayOf(CONSTANT, col)
         nineLinesPost.createPost(
-            lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA,
-            radius = 15,fontFamily = 1
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 15,fontFamily = 600
         )
     }
-    fun post25() {
-        image.load(R.drawable.monk2)
+    fun post205() {
+        image.load("https://cdn.pixabay.com/photo/2020/01/06/10/16/theravada-buddhism-4745053_1280.jpg")
         val backGround = "004d40"
         val tranparency = 0
         val lineA = arrayOf(
@@ -152,17 +147,18 @@ class Post2Lines(val context: Context) {
             radius = 15,fontFamily = 4
         )
     }
-    fun post26() {
-        image.load(R.drawable.fragile)
+    fun post206() {
+        image.load("https://cdn.pixabay.com/photo/2015/09/16/21/07/egg-943413_1280.jpg")
         val backGround = "757575"
-        val tranparency = 8
+        val tranparency = 0
         val lineA = arrayOf(
             "ככל  שהחיים נעשים שבירים יותר,",
             "כך הם יותר מובנים."
         )
+        val di=35
         val marginA = arrayOf(
-            arrayOf(0, 0, 0, -1),
-            arrayOf(0, 100, 0, -1)
+            arrayOf(0, 0+di, 0, -1),
+            arrayOf(0, 100+di, 0, -1)
         )
         val paddingA = arrayOf(0, 0, 0, 0)
         val textSizeA = arrayOf(0, 30)
@@ -170,20 +166,20 @@ class Post2Lines(val context: Context) {
         val textColorA = arrayOf(CONSTANT, col)
         nineLinesPost.createPost(
             lineNum, backGround, tranparency, lineA, marginA, paddingA, textSizeA, textColorA,
-            radius = 15,fontFamily = 4
+            radius = 15,fontFamily = 541
         )
     }
-    fun post227() {
-        image.load(R.drawable.creation)
+    fun post207() {
+        image.load("https://cdn.pixabay.com/photo/2020/01/14/19/09/crayon-4766037_1280.jpg")
         val backGround = "757575"
-        val transparency = 8
+        val transparency = 6
         val lineA = arrayOf(
             " האלוהים ברא את היצירה ",
             " האדם  את  הביקורת. "
         )
         val marginA = arrayOf(
-            arrayOf(0, 5, 0, -1),
-            arrayOf(0, 55, 0, -1)
+            arrayOf(0, 0, 0, -1),
+            arrayOf(0, 40, 0, -1)
         )
         val paddingA = arrayOf(0, 0, 0, 0)
         val textSizeA = arrayOf(0, 30)
@@ -191,31 +187,11 @@ class Post2Lines(val context: Context) {
         val textColorA = arrayOf(CONSTANT, col)
         nineLinesPost.createPost(
             lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
-            radius = 15,fontFamily = 4
+            radius = 15,fontFamily = 110
         )
     }
-    fun post28() {
-        image.load(R.drawable.life)
-        val backGround = "efc9af"
-        val transparency = 3
-        val lineA = arrayOf(
-            "אתה לא עושה לאף אחד טובה שאתה מבסוט מהחיים",
-            "פרט לעצמך ."
-        )
-        val marginA = arrayOf(
-            arrayOf(0, -1, 0, 50),
-            arrayOf(0, -1, 0, 0)
-        )
-        val paddingA = arrayOf(5, 0, 5, 0)
-        val textSizeA = arrayOf(0, 30)
-        val col = "#104c91"
-        val textColorA = arrayOf(CONSTANT, col)
-        nineLinesPost.createPost(
-            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
-            radius = 15,fontFamily = 4
-        )
-    }
-    fun post29() {
+
+    fun post208() {
         image.load(R.drawable.view)
         val backGround = "efc9af"
         val transparency = 0
@@ -236,7 +212,7 @@ class Post2Lines(val context: Context) {
             radius = 15,fontFamily = 4
         )
     }
-    fun post30() {
+    fun post209() {
         image.load(R.drawable.long_road)
         val backGround = "efc9af"
         val transparency = 0
@@ -257,7 +233,7 @@ class Post2Lines(val context: Context) {
             radius = 15,fontFamily = 4
         )
     }
-    fun post31() {
+    fun post210() {
         image.load(R.drawable.fool)
         val backGround = "efc9af"
         val transparency = 7
@@ -278,29 +254,29 @@ class Post2Lines(val context: Context) {
             radius = 15,fontFamily = 4
         )
     }
-    fun post32() {
-        image.load(R.drawable.wise1)
+    fun post211() {
+        image.load("https://cdn.pixabay.com/photo/2016/02/11/12/01/buddhism-1193442_1280.jpg")
         val backGround = "efc9af"
-        val transparency = 8
+        val transparency = 10
         val lineA = arrayOf(
             "חכם לא עושה דברים",
             "שטיפש סובל מהם על בסיס קבוע."
         )
         val marginA = arrayOf(
-            arrayOf(0, -1, 0, 102),
+            arrayOf(0, -1, 0, 80),
             arrayOf(0, -1, 0, 0)
         )
         val paddingA = arrayOf(5, 0, 5, 0)
-        val textSizeA = arrayOf(0, 30)
+        val textSizeA = arrayOf(0, 25)
         val col = "#1f8ac0"
         val textColorA = arrayOf(CONSTANT, col)
         nineLinesPost.createPost(
             lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
-            radius = 15,fontFamily = 4
+            radius = 15,fontFamily = 103
         )
     }
-    fun post233() {
-        image.load(R.drawable.wise10)
+    fun post212() {
+        image.load("R.drawable.wise10")
         val backGround = "efc9af"
         val transparency = 8
         val lineA = arrayOf(
@@ -320,7 +296,7 @@ class Post2Lines(val context: Context) {
             radius = 15,fontFamily = 4
         )
     }
-    fun post234() {
+    fun post213() {
         image.load(R.drawable.fool10)
         val backGround = "e64a19"
         val transparency = 8
@@ -341,7 +317,7 @@ class Post2Lines(val context: Context) {
             radius = 15,fontFamily = 4
         )
     }
-    fun post235() {
+    fun post214() {
         image.load(R.drawable.sunrise10)
         val backGround = "e64a19"
         val transparency = 4
@@ -362,7 +338,7 @@ class Post2Lines(val context: Context) {
             radius = 5,fontFamily = 1
         )
     }
-    fun post236() {
+    fun post215() {
         image.load(R.drawable.success)
         val backGround = "4ac4e2"
         val transparency = 7
@@ -383,7 +359,7 @@ class Post2Lines(val context: Context) {
             radius = 5,fontFamily = 1
         )
     }
-    fun post237() {
+    fun post216() {
         image.load(R.drawable.cave)
         val backGround = "4ac4e2"
         val transparency = 0

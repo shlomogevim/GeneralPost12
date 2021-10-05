@@ -384,15 +384,6 @@ class Post2Lines(val context: Context) {
     fun post217() {
 
         image.load("https://cdn.pixabay.com/photo/2018/07/05/11/47/hand-3518161_1280.png")
-       // image.load("https://cdn.pixabay.com/photo/2017/06/20/23/16/coffee-2425309_1280.jpg")
-      //  image.load("https://cdn.pixabay.com/photo/2019/11/24/00/21/smiley-4648319_1280.jpg")
-      //  image.load("https://cdn.pixabay.com/photo/2017/06/20/22/39/coffee-2425242_1280.jpg")
-        //image.load("https://cdn.pixabay.com/photo/2016/03/05/19/41/achievement-1238472_1280.jpg")
-
-
-
-
-
 
         val backGround = "4ac4e2"
         val transparency = 0

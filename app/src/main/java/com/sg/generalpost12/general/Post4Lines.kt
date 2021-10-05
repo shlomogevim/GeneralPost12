@@ -525,4 +525,33 @@ class Post4Lines (val context: Context) {
             radius = 10,fontFamily = 260
         )
     }
+
+    fun post457() {
+        image.load("https://cdn.pixabay.com/photo/2017/04/26/23/46/morning-2264051_1280.jpg")
+        val backGround = "558b2f"
+        val transparency = 0
+        val lineA = arrayOf(
+            " לא היית  יכול ",
+            " לחיות  את  חייך  אחרת , ",
+            "פשוט",
+            "כי אתה כזה."
+        )
+        val di=0
+
+        val marginA = arrayOf(
+            arrayOf(0, 0+di, 0, -1),
+            arrayOf(0, 40+di, 0, -1),
+            arrayOf(0, 80+di, 0, -1),
+            arrayOf(0, 120+di, 0, -1)
+        )
+        val paddingA = arrayOf(0, 0, 0, 0)
+        val textSizeA = arrayOf(0, 30)
+        val col = "#ffffff"
+        val textColorA = arrayOf(CONSTANT, col)
+        nineLinesPost.createPost(
+            lineNum, backGround, transparency, lineA, marginA, paddingA, textSizeA, textColorA,
+            radius = 10,fontFamily = 100
+        )
+    }
+
 }
